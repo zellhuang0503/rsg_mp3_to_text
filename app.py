@@ -181,4 +181,7 @@ def transcribe_audio():
         return jsonify({'error': f'轉錄失敗: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # 確保上傳目錄存在
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    # 監聽所有網絡接口
+    app.run(host='0.0.0.0', port=5000, debug=True)

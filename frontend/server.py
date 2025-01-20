@@ -3,9 +3,10 @@ import os
 
 class CORSRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
-        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Origin', 'http://localhost:5000')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        self.send_header('Access-Control-Allow-Credentials', 'true')
         self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
         self.send_header('Pragma', 'no-cache')
         self.send_header('Expires', '0')
@@ -19,8 +20,8 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
         """Guess the type of a file based on its extension."""
         if path.endswith('.js'):
             return 'application/javascript'
-        if path.endswith('.html'):
-            return 'text/html'
+        elif path.endswith('.css'):
+            return 'text/css'
         return super().guess_type(path)
 
     def translate_path(self, path):
@@ -52,13 +53,11 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
     # 設置服務器
-    port = 5500
-    server = HTTPServer(('localhost', port), CORSRequestHandler)
-    print(f'啟動前端服務器在 http://localhost:{port}')
-    print(f'當前工作目錄: {os.getcwd()}')
-    
+    server_address = ('', 5500)
+    httpd = HTTPServer(server_address, CORSRequestHandler)
+    print(f'啟動前端服務器於 http://localhost:5500')
     try:
-        server.serve_forever()
+        httpd.serve_forever()
     except KeyboardInterrupt:
         print('\n關閉服務器...')
-        server.server_close()
+        httpd.server_close()
