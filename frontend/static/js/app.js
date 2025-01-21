@@ -20,8 +20,8 @@ function App() {
         setError('');
 
         for (const file of uploadedFiles) {
-            if (file.size > 25 * 1024 * 1024) {
-                setError('檔案大小不能超過 25MB');
+            if (file.size > 45 * 1024 * 1024) {
+                setError('檔案大小不能超過 45MB');
                 return;
             }
 
@@ -116,7 +116,7 @@ function App() {
                         disabled={isLoading}
                     />
                     <p className="text-sm text-gray-500 mt-1">
-                        支援的格式：MP3, WAV, M4A, OGG, FLAC（最大 25MB）
+                        支援的格式：MP3, WAV, M4A, OGG, FLAC（最大 45MB）
                     </p>
                 </div>
 

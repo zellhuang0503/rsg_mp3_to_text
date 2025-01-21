@@ -59,7 +59,7 @@ CORS(app, resources={
 # 配置
 UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uploads'))
 ALLOWED_EXTENSIONS = {'mp3', 'wav', 'm4a', 'ogg', 'flac'}
-MAX_CONTENT_LENGTH = 25 * 1024 * 1024  # 25MB
+MAX_CONTENT_LENGTH = 45 * 1024 * 1024  # 45MB
 
 # 初始化 whisper 模型
 try:

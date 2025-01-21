@@ -248,3 +248,86 @@
 2025-01-21 23:02:20,203 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
 2025-01-21 23:02:20,311 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
 2025-01-21 23:02:20,635 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:12:09,936 [INFO] === 系統環境信息 ===
+2025-01-21 23:12:09,936 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:12:09,936 [INFO] 系統平台: win32
+2025-01-21 23:12:09,936 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:12:09,936 [INFO] 默認編碼: utf-8
+2025-01-21 23:12:09,936 [INFO] 環境變量:
+2025-01-21 23:12:09,936 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:12:09,936 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:12:09,936 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:12:09,936 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:12:10,790 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-21 23:12:10,790 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-21 23:12:10,790 [INFO]  * Restarting with stat
+2025-01-21 23:12:12,475 [INFO] === 系統環境信息 ===
+2025-01-21 23:12:12,475 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:12:12,475 [INFO] 系統平台: win32
+2025-01-21 23:12:12,475 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:12:12,475 [INFO] 默認編碼: utf-8
+2025-01-21 23:12:12,475 [INFO] 環境變量:
+2025-01-21 23:12:12,475 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:12:12,475 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:12:12,475 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:12:12,475 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:12:13,241 [WARNING]  * Debugger is active!
+2025-01-21 23:12:13,243 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:13:23,047 [INFO] === 開始處理文件上傳請求 ===
+2025-01-21 23:13:23,047 [INFO] 請求頭: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '22853597', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryEBulRZQyNq4TNg8q', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5500', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5500/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
+2025-01-21 23:13:23,109 [INFO] === 文件信息 ===
+2025-01-21 23:13:23,109 [INFO] Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryEBulRZQyNq4TNg8q
+2025-01-21 23:13:23,111 [INFO] 表單數據: {'originalFilename': '20230817_有意識的生活_01.mp3'}
+2025-01-21 23:13:23,111 [INFO] 文件對象: <FileStorage: '20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3' ('audio/mpeg')>
+2025-01-21 23:13:23,111 [INFO] 文件名: 20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 字符串分析:
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 - value: 20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 - type: str
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 - length: 70
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 - bytes_repr: b'20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3'
+2025-01-21 23:13:23,114 [DEBUG] 上傳的文件名 - is_ascii: True
+2025-01-21 23:13:23,115 [DEBUG] 上傳的文件名 - contains_chinese: False
+2025-01-21 23:13:23,115 [DEBUG] 上傳的文件名 - url_encoded: 20230817_%25E6%259C%2589%25E6%2584%258F%25E8%25AD%2598%25E7%259A%2584%25E7%2594%259F%25E6%25B4%25BB_01.mp3
+2025-01-21 23:13:23,115 [DEBUG] 上傳的文件名 - url_decoded: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 字符串分析:
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - value: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - type: str
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - length: 22
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - bytes_repr: b'20230817_\xe6\x9c\x89\xe6\x84\x8f\xe8\xad\x98\xe7\x9a\x84\xe7\x94\x9f\xe6\xb4\xbb_01.mp3'
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - is_ascii: False
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - contains_chinese: True
+2025-01-21 23:13:23,115 [DEBUG] 原始文件名 - url_encoded: 20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3
+2025-01-21 23:13:23,116 [DEBUG] 原始文件名 - url_decoded: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,116 [INFO] 文件名信息：
+2025-01-21 23:13:23,116 [INFO] - 上傳的檔名：20230817_%E6%9C%89%E6%84%8F%E8%AD%98%E7%9A%84%E7%94%9F%E6%B4%BB_01.mp3
+2025-01-21 23:13:23,116 [INFO] - 原始檔名：20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,116 [DEBUG] 檔名處理過程:
+2025-01-21 23:13:23,116 [DEBUG] - 原始檔名: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,116 [DEBUG] - 處理後檔名: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,116 [DEBUG] - 編碼: b'20230817_\xe6\x9c\x89\xe6\x84\x8f\xe8\xad\x98\xe7\x9a\x84\xe7\x94\x9f\xe6\xb4\xbb_01.mp3'
+2025-01-21 23:13:23,116 [INFO] 處理後檔名：20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,116 [INFO] 完整路徑：E:\CascadeProjects\rsg_mp3_to_text\uploads\20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,173 [INFO] 文件保存成功: E:\CascadeProjects\rsg_mp3_to_text\uploads\20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,173 [INFO] 文件大小：22853216 bytes
+2025-01-21 23:13:23,173 [INFO] 文件可以正常讀取
+2025-01-21 23:13:23,178 [INFO] 127.0.0.1 - - [21/Jan/2025 23:13:23] "POST /api/upload HTTP/1.1" 200 -
+2025-01-21 23:13:23,492 [INFO] 127.0.0.1 - - [21/Jan/2025 23:13:23] "OPTIONS /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:13:23,493 [INFO] 開始處理轉錄請求
+2025-01-21 23:13:23,494 [DEBUG] 檔名處理過程:
+2025-01-21 23:13:23,494 [DEBUG] - 原始檔名: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,494 [DEBUG] - 處理後檔名: 20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,494 [DEBUG] - 編碼: b'20230817_\xe6\x9c\x89\xe6\x84\x8f\xe8\xad\x98\xe7\x9a\x84\xe7\x94\x9f\xe6\xb4\xbb_01.mp3'
+2025-01-21 23:13:23,495 [INFO] 檔案資訊：
+2025-01-21 23:13:23,495 [INFO] - 檔案名：20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,495 [INFO] - 原始檔名：20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,495 [INFO] - 完整路徑：E:\CascadeProjects\rsg_mp3_to_text\uploads\20230817_有意識的生活_01.mp3
+2025-01-21 23:13:23,495 [INFO] - 目錄是否存在：True
+2025-01-21 23:13:23,495 [INFO] - 檔案是否存在：True
+2025-01-21 23:13:23,495 [INFO] 開始轉錄檔案: E:\CascadeProjects\rsg_mp3_to_text\uploads\20230817_有意識的生活_01.mp3
+2025-01-21 23:15:13,543 [INFO] 轉錄完成
+2025-01-21 23:15:13,546 [INFO] 127.0.0.1 - - [21/Jan/2025 23:15:13] "POST /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:20:14,127 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:20:14,592 [INFO]  * Restarting with stat
