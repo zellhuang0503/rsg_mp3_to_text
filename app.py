@@ -7,6 +7,7 @@ from pydub import AudioSegment
 import re
 import sys
 import traceback
+import json
 
 app = Flask(__name__)
 # 配置 CORS
@@ -38,9 +39,12 @@ print(f"當前工作目錄: {os.getcwd()}")
 print(f"上傳目錄設置為: {UPLOAD_FOLDER}")
 print(f"Python 版本: {sys.version}")
 print(f"已安裝的套件:")
-for name, module in sys.modules.items():
-    if hasattr(module, '__version__'):
-        print(f"- {name}: {module.__version__}")
+for name, module in list(sys.modules.items()):
+    try:
+        if hasattr(module, '__version__'):
+            print(f"- {name}: {module.__version__}")
+    except:
+        continue
 
 # 確保上傳目錄存在
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -49,11 +53,12 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def safe_filename(filename):
-    # 保留中文字符和底線
+    # 先將檔名轉換為 UTF-8 編碼
+    filename = filename.encode('utf-8').decode('utf-8')
+    # 移除不安全的字符
     filename = secure_filename(filename)
-    # 使用正則表達式替換連續的底線為單個底線
-    filename = re.sub(r'_{2,}', '_', filename)
-    return filename
+    # 確保檔名是 UTF-8 編碼
+    return filename.encode('utf-8').decode('utf-8')
 
 # 說話者分割的時間閾值（秒）
 SPEAKER_SPLIT_THRESHOLD = 2.0
@@ -71,15 +76,18 @@ def detect_speakers(segments):
     formatted_segments = []
     
     for segment in segments:
-        # 如果與上一段落的時間間隔超過閾值，認為是新的說話者
-        if segment['start'] - last_end_time > SPEAKER_SPLIT_THRESHOLD:
-            current_speaker = 3 - current_speaker  # 在 1 和 2 之間切換
+        # 檢查是否需要切換說話者
+        if last_end_time > 0 and (segment['start'] - last_end_time) > SPEAKER_SPLIT_THRESHOLD:
+            current_speaker += 1
         
+        # 使用 UTF-8 編碼處理文字
+        text = segment['text'].encode('utf-8').decode('utf-8')
         formatted_text = (
             f"[說話者 {current_speaker}] "
             f"({format_timestamp(segment['start'])} - {format_timestamp(segment['end'])}) "
-            f"{segment['text']}"
-        )
+            f"{text}"
+        ).encode('utf-8').decode('utf-8')
+        
         formatted_segments.append(formatted_text)
         last_end_time = segment['end']
     
@@ -98,7 +106,8 @@ def upload_file():
             return jsonify({'error': '沒有選擇檔案'}), 400
         
         if file and allowed_file(file.filename):
-            original_filename = file.filename
+            # 確保檔名使用 UTF-8 編碼
+            original_filename = file.filename.encode('utf-8').decode('utf-8')
             safe_name = safe_filename(original_filename)
             filepath = os.path.join(UPLOAD_FOLDER, safe_name)
             
@@ -155,7 +164,8 @@ def transcribe_audio():
             print("錯誤：未提供檔案名")
             return jsonify({'error': '未提供檔案名'}), 400
 
-        # 構建文件路徑
+        # 構建文件路徑並確保使用 UTF-8 編碼
+        filename = filename.encode('utf-8').decode('utf-8')
         filepath = os.path.abspath(os.path.join(UPLOAD_FOLDER, filename))
             
         print(f"檔案資訊：")
@@ -194,7 +204,7 @@ def transcribe_audio():
         
         print(f"開始轉錄檔案: {filepath}")
         try:
-            # 轉錄音頻，使用正確的參數設定
+            # 轉錄音頻
             result = model.transcribe(
                 filepath,
                 language="zh",
@@ -203,24 +213,32 @@ def transcribe_audio():
             )
             print("轉錄完成")
             
-            # 從轉錄結果中提取分段
+            # 從轉錄結果中提取分段並確保使用 UTF-8 編碼
             segments = result.get('segments', [])
             if not segments:
-                # 如果沒有分段信息，創建一個包含完整文本的分段
+                text = result['text'].encode('utf-8').decode('utf-8')
                 segments = [{
                     'start': 0,
                     'end': 0,
-                    'text': result['text']
+                    'text': text
                 }]
             
             # 處理分段並識別說話者
             formatted_segments = detect_speakers(segments)
             
-            return jsonify({
+            response_data = {
                 'text': '\n'.join(formatted_segments),
                 'segments': formatted_segments,
                 'message': '轉錄完成'
-            }), 200
+            }
+            
+            # 確保 JSON 響應使用 UTF-8 編碼
+            return app.response_class(
+                response=json.dumps(response_data, ensure_ascii=False),
+                status=200,
+                mimetype='application/json'
+            )
+            
         except Exception as e:
             print(f"轉錄錯誤: {str(e)}")
             print(f"錯誤類型: {type(e)}")

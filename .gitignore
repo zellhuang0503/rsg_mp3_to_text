@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# 專案特定
+uploads/
+mp3/
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.flac
+python-*.exe
+
+# 系統文件
+.DS_Store
+Thumbs.db
