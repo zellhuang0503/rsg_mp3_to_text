@@ -194,18 +194,27 @@ def transcribe_audio():
         
         print(f"開始轉錄檔案: {filepath}")
         try:
-            # 轉錄音頻，啟用時間戳功能
+            # 轉錄音頻，使用正確的參數設定
             result = model.transcribe(
                 filepath,
                 language="zh",
                 task="transcribe",
-                return_segments=True,
-                word_timestamps=True
+                verbose=True
             )
             print("轉錄完成")
             
+            # 從轉錄結果中提取分段
+            segments = result.get('segments', [])
+            if not segments:
+                # 如果沒有分段信息，創建一個包含完整文本的分段
+                segments = [{
+                    'start': 0,
+                    'end': 0,
+                    'text': result['text']
+                }]
+            
             # 處理分段並識別說話者
-            formatted_segments = detect_speakers(result['segments'])
+            formatted_segments = detect_speakers(segments)
             
             return jsonify({
                 'text': '\n'.join(formatted_segments),
