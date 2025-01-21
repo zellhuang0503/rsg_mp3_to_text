@@ -1,6 +1,7 @@
 # 在導入任何模組之前設置環境變量
 import os
 import sys
+import datetime
 
 # 強制使用 UTF-8 編碼
 os.environ['PYTHONIOENCODING'] = 'utf-8'
@@ -58,6 +59,7 @@ CORS(app, resources={
 
 # 配置
 UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uploads'))
+TRANSCRIPTS_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'transcripts'))
 ALLOWED_EXTENSIONS = {'mp3', 'wav', 'm4a', 'ogg', 'flac'}
 MAX_CONTENT_LENGTH = 45 * 1024 * 1024  # 45MB
 
@@ -181,6 +183,38 @@ def detect_speakers(segments):
     
     return formatted_segments
 
+def save_transcript_to_markdown(transcript_data, original_filename):
+    """將轉錄結果保存為 Markdown 文件"""
+    try:
+        # 確保轉錄結果目錄存在
+        Path(TRANSCRIPTS_FOLDER).mkdir(parents=True, exist_ok=True)
+        
+        # 生成 Markdown 文件名（使用原始音頻文件名，但改為 .md 副檔名）
+        md_filename = os.path.splitext(original_filename)[0] + '.md'
+        md_path = os.path.join(TRANSCRIPTS_FOLDER, md_filename)
+        
+        # 準備 Markdown 內容
+        md_content = f"# 音頻轉錄結果：{original_filename}\n\n"
+        md_content += f"轉錄時間：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+        md_content += "## 內容\n\n"
+        
+        # 添加轉錄內容
+        for segment in transcript_data['segments']:
+            start_time = format_timestamp(segment['start'])
+            end_time = format_timestamp(segment['end'])
+            text = segment['text'].strip()
+            md_content += f"[{start_time} - {end_time}] {text}\n\n"
+        
+        # 寫入文件
+        with open(md_path, 'w', encoding='utf-8') as f:
+            f.write(md_content)
+            
+        return md_filename
+    except Exception as e:
+        logger.error(f"保存 Markdown 文件時出錯: {str(e)}")
+        logger.error(traceback.format_exc())
+        return None
+
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     try:
@@ -277,88 +311,36 @@ def transcribe_audio():
     try:
         logger.info("開始處理轉錄請求")
         data = request.get_json()
-        if not data:
-            logger.error("錯誤：無效的請求數據")
-            return jsonify({'error': '無效的請求數據'}), 400
+        if not data or 'filename' not in data:
+            return jsonify({'error': '未提供檔名'}), 400
             
-        filename = data.get('filename')
-        original_filename = data.get('originalFilename')
+        filename = data['filename']
+        original_filename = data.get('originalFilename', filename)
         
-        if not filename:
-            logger.error("錯誤：未提供檔案名")
-            return jsonify({'error': '未提供檔案名'}), 400
-
-        try:
-            # 處理檔名
-            filename = safe_filename(filename, original_filename)
-            filepath = Path(UPLOAD_FOLDER) / filename
+        file_path = os.path.join(UPLOAD_FOLDER, filename)
+        if not os.path.exists(file_path):
+            return jsonify({'error': '找不到檔案'}), 404
             
-            logger.info(f"檔案資訊：")
-            logger.info(f"- 檔案名：{filename}")
-            logger.info(f"- 原始檔名：{original_filename}")
-            logger.info(f"- 完整路徑：{filepath}")
-            logger.info(f"- 目錄是否存在：{Path(UPLOAD_FOLDER).exists()}")
-            logger.info(f"- 檔案是否存在：{filepath.exists()}")
+        if not model:
+            return jsonify({'error': 'Whisper 模型未正確載入'}), 500
             
-            if not Path(UPLOAD_FOLDER).exists():
-                logger.error(f"錯誤：上傳目錄不存在: {UPLOAD_FOLDER}")
-                return jsonify({'error': '系統錯誤：上傳目錄不存在'}), 500
-            
-            if not filepath.exists():
-                logger.error(f"錯誤：檔案不存在: {filepath}")
-                return jsonify({'error': '檔案不存在'}), 404
-
-            # 載入 Whisper 模型
-            if model is None:
-                logger.error("錯誤：Whisper 模型未初始化")
-                return jsonify({'error': '系統錯誤：Whisper 模型未初始化'}), 500
-            
-            logger.info(f"開始轉錄檔案: {filepath}")
-            try:
-                # 轉錄音頻
-                result = model.transcribe(
-                    str(filepath),
-                    language="zh",
-                    task="transcribe",
-                    verbose=True
-                )
-                logger.info("轉錄完成")
-                
-                # 處理轉錄結果
-                segments = result.get('segments', [])
-                if not segments:
-                    text = result['text']
-                    segments = [{
-                        'start': 0,
-                        'end': 0,
-                        'text': text
-                    }]
-                
-                # 處理分段並識別說話者
-                formatted_segments = detect_speakers(segments)
-                
-                # 準備響應數據
-                response_data = {
-                    'text': '\n'.join(formatted_segments),
-                    'segments': formatted_segments,
-                    'message': '轉錄完成'
-                }
-                
-                # 確保 JSON 響應使用 UTF-8 編碼
-                return app.response_class(
-                    response=json.dumps(response_data, ensure_ascii=False),
-                    status=200,
-                    mimetype='application/json; charset=utf-8'
-                )
-                
-            except Exception as transcribe_error:
-                logger.error(f"轉錄過程中發生錯誤: {str(transcribe_error)}")
-                raise transcribe_error
-
-        except Exception as process_error:
-            logger.error(f"處理檔案時發生錯誤: {str(process_error)}")
-            raise process_error
-
+        # 使用 whisper 進行轉錄
+        result = model.transcribe(file_path, language='zh')
+        
+        # 檢測說話者並更新結果
+        result['segments'] = detect_speakers(result['segments'])
+        
+        # 保存為 Markdown 文件
+        md_filename = save_transcript_to_markdown(result, original_filename)
+        
+        # 在回應中加入 Markdown 文件名
+        response_data = {
+            'text': result['text'],
+            'segments': result['segments'],
+            'markdown_file': md_filename
+        }
+        
+        return jsonify(response_data)
     except Exception as e:
         logger.error(f"轉錄錯誤: {str(e)}")
         logger.error(f"錯誤類型: {type(e)}")
