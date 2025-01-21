@@ -25,6 +25,14 @@ UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), 'uploads
 ALLOWED_EXTENSIONS = {'mp3', 'wav', 'm4a', 'ogg', 'flac'}
 MAX_CONTENT_LENGTH = 25 * 1024 * 1024  # 25MB
 
+# 初始化 whisper 模型
+try:
+    model = whisper.load_model("base")
+    print("Whisper 模型載入成功")
+except Exception as e:
+    print(f"Whisper 模型載入失敗: {str(e)}")
+    model = None
+
 print(f"應用程序啟動")
 print(f"當前工作目錄: {os.getcwd()}")
 print(f"上傳目錄設置為: {UPLOAD_FOLDER}")
@@ -150,14 +158,9 @@ def transcribe_audio():
             return jsonify({'error': f'檔案無法讀取: {str(e)}'}), 500
 
         # 載入 Whisper 模型
-        print("正在載入模型...")
-        try:
-            model = whisper.load_model("base")
-            print("模型載入成功")
-        except Exception as e:
-            print(f"錯誤：無法載入模型: {str(e)}")
-            traceback.print_exc()
-            return jsonify({'error': f'無法載入模型: {str(e)}'}), 500
+        if model is None:
+            print("錯誤：Whisper 模型未初始化")
+            return jsonify({'error': '系統錯誤：Whisper 模型未初始化'}), 500
         
         print(f"開始轉錄檔案: {filepath}")
         try:
