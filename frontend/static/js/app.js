@@ -6,6 +6,14 @@ function App() {
 
     const API_BASE_URL = 'http://localhost:5000';  // 修改為正確的後端地址
 
+    // 處理文件名編碼
+    const processFilename = (filename) => {
+        // 1. 先移除不安全的字符，但保留中文
+        const safeFilename = filename.replace(/[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9\-_\.]/g, '_');
+        // 2. URL 編碼，確保中文字符可以正確傳輸
+        return encodeURIComponent(safeFilename);
+    };
+
     const handleFileUpload = async (event) => {
         const uploadedFiles = Array.from(event.target.files);
         setFiles(uploadedFiles);
@@ -17,10 +25,26 @@ function App() {
                 return;
             }
 
-            const formData = new FormData();
-            formData.append('file', file);
-
             try {
+                // 處理文件名
+                const originalFilename = file.name;
+                const processedFilename = processFilename(originalFilename);
+                
+                console.log('檔案名處理：', {
+                    original: originalFilename,
+                    processed: processedFilename,
+                    decoded: decodeURIComponent(processedFilename)
+                });
+
+                // 創建新的文件對象，使用處理後的文件名
+                const formData = new FormData();
+                const blob = file.slice(0, file.size, file.type);
+                const newFile = new File([blob], processedFilename, { type: file.type });
+                formData.append('file', newFile);
+                
+                // 添加原始文件名作為額外字段
+                formData.append('originalFilename', originalFilename);
+
                 setIsLoading(true);
                 setError('');
                 
@@ -43,16 +67,17 @@ function App() {
                 console.log('檔案上傳成功，開始轉錄...');
                 console.log('檔案名:', data.filename);
                 
-                // 開始轉錄
+                // 開始轉錄（使用已經編碼的文件名）
                 const transcribeResponse = await fetch(`${API_BASE_URL}/api/transcribe`, {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json; charset=utf-8',
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({ 
-                        filename: data.filename
+                        filename: data.filename,
+                        originalFilename: originalFilename
                     }),
                 });
 
@@ -61,8 +86,9 @@ function App() {
                     throw new Error(errorData.error || `轉錄失敗: ${transcribeResponse.status}`);
                 }
 
-                const transcribeData = await transcribeResponse.json();
-                setTranscribedText(transcribeData.text);
+                const transcribeData = await transcribeResponse.text();
+                const parsedData = JSON.parse(transcribeData);
+                setTranscribedText(parsedData.text);
                 console.log('轉錄完成');
             } catch (error) {
                 console.error('錯誤:', error);
