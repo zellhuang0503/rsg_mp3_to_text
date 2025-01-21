@@ -55,6 +55,36 @@ def safe_filename(filename):
     filename = re.sub(r'_{2,}', '_', filename)
     return filename
 
+# 說話者分割的時間閾值（秒）
+SPEAKER_SPLIT_THRESHOLD = 2.0
+
+def format_timestamp(seconds):
+    """將秒數轉換為時間戳格式"""
+    minutes = int(seconds // 60)
+    seconds = int(seconds % 60)
+    return f"{minutes:02d}:{seconds:02d}"
+
+def detect_speakers(segments):
+    """根據時間間隔檢測不同的說話者"""
+    current_speaker = 1
+    last_end_time = 0
+    formatted_segments = []
+    
+    for segment in segments:
+        # 如果與上一段落的時間間隔超過閾值，認為是新的說話者
+        if segment['start'] - last_end_time > SPEAKER_SPLIT_THRESHOLD:
+            current_speaker = 3 - current_speaker  # 在 1 和 2 之間切換
+        
+        formatted_text = (
+            f"[說話者 {current_speaker}] "
+            f"({format_timestamp(segment['start'])} - {format_timestamp(segment['end'])}) "
+            f"{segment['text']}"
+        )
+        formatted_segments.append(formatted_text)
+        last_end_time = segment['end']
+    
+    return formatted_segments
+
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     try:
@@ -164,11 +194,22 @@ def transcribe_audio():
         
         print(f"開始轉錄檔案: {filepath}")
         try:
-            # 轉錄音頻
-            result = model.transcribe(filepath)
+            # 轉錄音頻，啟用時間戳功能
+            result = model.transcribe(
+                filepath,
+                language="zh",
+                task="transcribe",
+                return_segments=True,
+                word_timestamps=True
+            )
             print("轉錄完成")
+            
+            # 處理分段並識別說話者
+            formatted_segments = detect_speakers(result['segments'])
+            
             return jsonify({
-                'text': result['text'],
+                'text': '\n'.join(formatted_segments),
+                'segments': formatted_segments,
                 'message': '轉錄完成'
             }), 200
         except Exception as e:
