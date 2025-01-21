@@ -31,6 +31,27 @@
 - 語音識別：OpenAI Whisper
 - 資料庫：SQLite（本地存儲）
 
+系統要求
+- Python 3.8 或更高版本
+- 至少 4GB RAM（用於音頻處理）
+- 硬碟空間：至少 500MB（包含模型檔案）
+
+必要依賴套件
+- Flask==3.0.0：Web 框架
+- flask-cors==4.0.0：處理跨域請求
+- openai-whisper==20231117：語音識別核心
+- torch>=2.2.1：深度學習框架（Whisper 依賴）
+- torchaudio>=2.2.1：音頻處理（Whisper 依賴）
+- numpy>=1.23.5：數值計算（Whisper 依賴）
+- pydub==0.25.1：音頻格式轉換
+- python-dotenv==1.0.0：環境變數管理
+
+模型資訊
+- Whisper base 模型：約 139MB
+- 首次運行時會自動下載
+- 支援語言：多國語言，包含中文、英文等
+- 模型存放位置：%USERPROFILE%/.cache/whisper/
+
 音頻處理要求
 - 支持的最大文件大小: 25MB10
 - 支持的音頻格式: MP3、WAV、M4A、OGG、FLAC46
