@@ -3,7 +3,6 @@ function App() {
     const [transcribedText, setTranscribedText] = React.useState('');
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState('');
-    const [markdownFile, setMarkdownFile] = React.useState('');
 
     const API_BASE_URL = 'http://localhost:5000';  // 修改為正確的後端地址
 
@@ -21,8 +20,8 @@ function App() {
         setError('');
 
         for (const file of uploadedFiles) {
-            if (file.size > 45 * 1024 * 1024) {
-                setError('檔案大小不能超過 45MB');
+            if (file.size > 25 * 1024 * 1024) {
+                setError('檔案大小不能超過 25MB');
                 return;
             }
 
@@ -90,9 +89,6 @@ function App() {
                 const transcribeData = await transcribeResponse.text();
                 const parsedData = JSON.parse(transcribeData);
                 setTranscribedText(parsedData.text);
-                if (parsedData.markdown_file) {
-                    setMarkdownFile(parsedData.markdown_file);
-                }
                 console.log('轉錄完成');
             } catch (error) {
                 console.error('錯誤:', error);
@@ -120,7 +116,7 @@ function App() {
                         disabled={isLoading}
                     />
                     <p className="text-sm text-gray-500 mt-1">
-                        支援的格式：MP3, WAV, M4A, OGG, FLAC（最大 45MB）
+                        支援的格式：MP3, WAV, M4A, OGG, FLAC（最大 25MB）
                     </p>
                 </div>
 
@@ -137,24 +133,11 @@ function App() {
                 )}
 
                 {transcribedText && (
-                    <div className="mt-8">
-                        {error && (
-                            <div className="text-red-500 mb-4">{error}</div>
-                        )}
-                        <h2 className="text-xl font-bold mb-4">轉錄結果：</h2>
-                        <div className="bg-gray-50 p-4 rounded-lg whitespace-pre-wrap">
+                    <div className="mt-6">
+                        <h2 className="text-xl font-semibold mb-2">轉錄結果：</h2>
+                        <div className="p-4 bg-gray-50 rounded border">
                             {transcribedText}
                         </div>
-                        {markdownFile && (
-                            <div className="mt-4">
-                                <p className="text-sm text-gray-600">
-                                    轉錄結果已保存為 Markdown 文件：{markdownFile}
-                                </p>
-                                <p className="text-sm text-gray-600">
-                                    檔案位置：/transcripts/{markdownFile}
-                                </p>
-                            </div>
-                        )}
                     </div>
                 )}
             </div>
