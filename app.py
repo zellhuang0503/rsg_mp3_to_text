@@ -26,7 +26,7 @@ os.environ['LC_ALL'] = 'zh_TW.UTF-8'
 UPLOAD_FOLDER = 'uploads'
 TRANSCRIPTS_FOLDER = 'transcripts'
 ALLOWED_EXTENSIONS = {'mp3', 'wav', 'm4a', 'ogg', 'flac'}
-MAX_CONTENT_LENGTH = 25 * 1024 * 1024  # 25MB
+MAX_CONTENT_LENGTH = 45 * 1024 * 1024  # 45MB
 
 import json
 from flask import Flask, request, jsonify
