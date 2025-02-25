@@ -7,3 +7,4 @@ pydub==0.25.1
 numpy
 torch
 requests==2.31.0
+opencc-python-reimplemented==0.1.7

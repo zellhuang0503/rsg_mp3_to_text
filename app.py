@@ -17,6 +17,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import whisper
 import google.generativeai as genai
+import opencc  # 在文件開頭添加 OpenCC 的導入
 
 # 設置日誌記錄
 logging.basicConfig(
@@ -327,6 +328,9 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
     try:
         logger.info("開始改善文字品質")
         
+        # 初始化繁簡轉換器
+        converter = opencc.OpenCC('s2t')  # 簡體轉繁體
+        
         # 如果文本為空，直接返回
         if not text.strip():
             logger.warning("收到空文本，直接返回")
@@ -382,10 +386,15 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
                     response = model.generate_content(prompt)
                     
                     if response.text:
-                        improved_text = response.text.strip()
-                        improved_chunks.append(improved_text)
-                        logger.info(f"成功處理第 {i+1} 個文本塊")
-                        break
+                        # 確保輸出為繁體中文
+                        response_text = converter.convert(response.text)
+                        
+                        # 檢查並修正特定名詞
+                        for wrong, correct in PROPER_NOUNS.items():
+                            response_text = response_text.replace(wrong, correct)
+                        
+                        improved_chunks.append(response_text)
+                        break  # 成功處理，跳出重試循環
                     else:
                         logger.warning(f"文本塊 {i+1} 的 API 回應為空，嘗試重試 ({attempt + 1}/{max_retries})")
                 
@@ -402,10 +411,6 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
         # 最後的清理
         improved_text = re.sub(r'\n{3,}', '\n\n', improved_text)  # 移除過多的空行
         improved_text = improved_text.strip()
-        
-        # 再次檢查並修正特定名詞
-        for wrong, correct in PROPER_NOUNS.items():
-            improved_text = improved_text.replace(wrong, correct)
         
         logger.info("文字品質改善完成")
         return improved_text
