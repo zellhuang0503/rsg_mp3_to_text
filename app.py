@@ -279,57 +279,141 @@ def api_transcribe():
         logger.error(traceback.format_exc())
         return jsonify({'error': str(e)}), 500
 
-def improve_text_quality(text):
-    """使用 Gemini 改善文字品質"""
+# 定義專有名詞對照表
+PROPER_NOUNS = {
+    "關西聊天室": "關係聊天室",
+    "心靈補夢網": "心靈捕夢網"
+}
+
+def improve_text_quality(text, max_retries=3, chunk_size=1500):
+    """使用 Gemini 改善文字品質
+    
+    Args:
+        text (str): 要改善的文字
+        max_retries (int): API 調用失敗時的最大重試次數
+        chunk_size (int): 每個文本塊的最大字符數
+    
+    Returns:
+        str: 改善後的文字
+    """
+    def split_text(text, chunk_size):
+        """將文本分割成較小的塊，確保不會切斷句子"""
+        # 首先按句號分割
+        sentences = text.split('。')
+        chunks = []
+        current_chunk = []
+        current_size = 0
+        
+        for sentence in sentences:
+            # 確保句子結尾有句號
+            sentence = sentence.strip() + '。' if sentence.strip() else ''
+            sentence_size = len(sentence)
+            
+            if current_size + sentence_size > chunk_size and current_chunk:
+                # 當前塊已滿，保存並開始新的塊
+                chunks.append(''.join(current_chunk))
+                current_chunk = [sentence]
+                current_size = sentence_size
+            else:
+                current_chunk.append(sentence)
+                current_size += sentence_size
+        
+        # 添加最後一個塊
+        if current_chunk:
+            chunks.append(''.join(current_chunk))
+            
+        return chunks
+
     try:
+        logger.info("開始改善文字品質")
+        
+        # 如果文本為空，直接返回
+        if not text.strip():
+            logger.warning("收到空文本，直接返回")
+            return text
+            
+        # 分割文本為較小的塊
+        text_chunks = split_text(text, chunk_size)
+        improved_chunks = []
+        
         # 配置模型
         model = genai.GenerativeModel('gemini-pro')
-        # 設置提示詞
-        prompt = f"""
-        作為一個文字校對專家，請幫我修正以下繁體中文文本。你需要：
-
-        1. 基本要求：
-           - 修正所有錯別字
-           - 改善文字的通順度
-           - 保持原意不變
-           - 維持繁體中文輸出
-
-        2. 專有名詞規範：
-           - "關係花園" (不是其他變體)
-           - "關係聊天室" (不是其他變體)
-           - "心靈捕夢網" (不是其他變體)
-           - "關係聊天室Podcast" (不是其他變體)
-           - "牢籠" (不要誤寫為"籠子"或其他變體)
-           - "經驗" (不要誤寫為"經歷"或其他變體)
-
-        3. 格式要求：
-           - 根據語意適當添加標點符號（逗號、句號、分號等）
-           - 按照內容邏輯分段，每段表達一個完整的思想
-           - 使用適當的段落間距來提高可讀性
-           - 重要觀點可以使用破折號來強調
-           - 對話或引述內容使用引號標示
-
-        以下是需要修正的文字：
-        {text}
-
-        請注意：
-        1. 保持原文的語氣和風格
-        2. 分段時要考慮上下文的連貫性
-        3. 標點符號的使用要自然，不要過度
-        4. 確保所有專有名詞的正確性
-        5. 段落長度要適中，避免過長或過短
-        """
         
-        # 生成回應
-        response = model.generate_content(prompt)
+        # 處理每個文本塊
+        for i, chunk in enumerate(text_chunks):
+            logger.info(f"處理第 {i+1}/{len(text_chunks)} 個文本塊")
+            
+            for attempt in range(max_retries):
+                try:
+                    # 設置提示詞
+                    prompt = f"""
+                    作為一個文字校對專家，請幫我修正以下繁體中文文本。你需要：
+
+                    1. 基本要求：
+                       - 修正所有錯別字
+                       - 改善文字的通順度
+                       - 保持原意不變
+                       - 維持繁體中文輸出
+                       
+                    2. 特別注意：
+                       - "關西聊天室" 應該是 "關係聊天室"
+                       - "心靈補夢網" 應該是 "心靈捕夢網"
+                       - 這些是特定名詞，請務必正確使用
+
+                    3. 格式要求：
+                       - 根據語意適當添加標點符號（逗號、句號、分號等）
+                       - 按照內容邏輯分段，每段表達一個完整的思想
+                       - 使用適當的段落間距來提高可讀性
+                       - 重要觀點可以使用破折號來強調
+                       - 對話或引述內容使用引號標示
+
+                    以下是需要校正的文本：
+                    {chunk}
+
+                    請注意：
+                    1. 保持原文的語氣和風格
+                    2. 分段時要考慮上下文的連貫性
+                    3. 標點符號的使用要自然，不要過度
+                    4. 確保所有專有名詞的正確性
+                    5. 段落長度要適中，避免過長或過短
+                    """
+                    
+                    # 生成回應
+                    response = model.generate_content(prompt)
+                    
+                    if response.text:
+                        improved_text = response.text.strip()
+                        improved_chunks.append(improved_text)
+                        logger.info(f"成功處理第 {i+1} 個文本塊")
+                        break
+                    else:
+                        logger.warning(f"文本塊 {i+1} 的 API 回應為空，嘗試重試 ({attempt + 1}/{max_retries})")
+                
+                except Exception as e:
+                    logger.error(f"處理文本塊 {i+1} 時發生錯誤: {str(e)}")
+                    if attempt == max_retries - 1:  # 最後一次嘗試
+                        logger.error("已達到最大重試次數，使用原始文本")
+                        improved_chunks.append(chunk)
+                    time.sleep(1)  # 等待一秒後重試
         
-        # 檢查是否有回應
-        if response.text:
-            return response.text.strip()
-        return text  # 如果 API 調用失敗，返回原始文字
+        # 合併所有改善後的文本塊
+        improved_text = ''.join(improved_chunks)
+        
+        # 最後的清理
+        improved_text = re.sub(r'\n{3,}', '\n\n', improved_text)  # 移除過多的空行
+        improved_text = improved_text.strip()
+        
+        # 再次檢查並修正特定名詞
+        for wrong, correct in PROPER_NOUNS.items():
+            improved_text = improved_text.replace(wrong, correct)
+        
+        logger.info("文字品質改善完成")
+        return improved_text
+        
     except Exception as e:
-        logging.error(f"Gemini API 錯誤: {str(e)}")
-        return text  # 如果 API 調用失敗，返回原始文字
+        logger.error(f"改善文字品質時發生錯誤: {str(e)}")
+        logger.error(traceback.format_exc())
+        return text  # 如果發生錯誤，返回原始文字
 
 if __name__ == '__main__':
     # 確保上傳目錄存在
