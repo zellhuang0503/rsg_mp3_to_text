@@ -11,26 +11,44 @@
 
 ## 安裝說明
 
-### 後端設置
+### 系統要求
+- 儲存路徑需求：建議安裝在 **E:\CascadeProjects** 目錄下以確保最佳相容性
+- 磁碟空間：至少 2GB 可用空間（用於音頻處理和臨時文件）
 
-1. 安裝 Python 依賴：
+### 後端設置
+1. 克隆倉庫到指定路徑：
+```bash
+git clone https://github.com/your-repo/rsg_mp3_to_text.git E:\CascadeProjects\rsg_mp3_to_text
+```
+
+2. 進入專案目錄：
+```powershell
+cd E:\CascadeProjects\rsg_mp3_to_text
+```
+
+3. 安裝 Python 依賴：
 ```bash
 pip install -r requirements.txt
 ```
 
-2. 運行 Flask 服務器：
-```bash
-python app.py
+### 文件儲存位置
+- 上傳音頻存放路徑：`E:\CascadeProjects\rsg_mp3_to_text\uploads`
+- 轉寫結果存放路徑：`E:\CascadeProjects\rsg_mp3_to_text\transcripts`
+- 日誌文件路徑：`E:\CascadeProjects\rsg_mp3_to_text\app.log`
+
+### 自定義路徑設定
+如需修改默認路徑，請編輯 `.env` 文件：
+```ini
+# 上傳目錄（絕對路徑）
+UPLOAD_FOLDER=E:/CascadeProjects/rsg_mp3_to_text/uploads
+# 轉寫結果目錄
+TRANSCRIPTS_FOLDER=E:/CascadeProjects/rsg_mp3_to_text/transcripts
 ```
 
-### 前端設置
-
-1. 進入前端目錄：
-```bash
-cd frontend
-```
-
-2. 使用瀏覽器打開 index.html 文件
+> **注意事項**  
+> 請勿將專案放置在包含中文或特殊字符的路徑中，例如：  
+> ❌ `E:\我的專案\`  
+> ✅ `E:\CascadeProjects\`
 
 ## 使用方法
 

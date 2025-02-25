@@ -426,3 +426,2289 @@
 2025-01-21 23:24:40,094 [INFO] - LC_ALL: zh_TW.UTF-8
 2025-01-21 23:24:40,868 [WARNING]  * Debugger is active!
 2025-01-21 23:24:40,870 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:25:47,582 [INFO] === 開始處理文件上傳請求 ===
+2025-01-21 23:25:47,582 [INFO] 請求頭: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '3455293', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryd9v3IO7Ju6Qj81Ta', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5500', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5500/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
+2025-01-21 23:25:47,593 [INFO] === 文件信息 ===
+2025-01-21 23:25:47,593 [INFO] Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryd9v3IO7Ju6Qj81Ta
+2025-01-21 23:25:47,593 [INFO] 表單數據: {'originalFilename': '20231002_心靈捕夢網_03_02完剪.mp3'}
+2025-01-21 23:25:47,593 [INFO] 文件對象: <FileStorage: '20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3' ('audio/mpeg')>
+2025-01-21 23:25:47,593 [INFO] 文件名: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 字符串分析:
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - value: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - type: str
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - length: 82
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - bytes_repr: b'20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3'
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - is_ascii: True
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - contains_chinese: False
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - url_encoded: 20231002_%25E5%25BF%2583%25E9%259D%2588%25E6%258D%2595%25E5%25A4%25A2%25E7%25B6%25B2_03_02%25E5%25AE%258C%25E5%2589%25AA.mp3
+2025-01-21 23:25:47,596 [DEBUG] 上傳的文件名 - url_decoded: 20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 字符串分析:
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - value: 20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - type: str
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - length: 26
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - bytes_repr: b'20231002_\xe5\xbf\x83\xe9\x9d\x88\xe6\x8d\x95\xe5\xa4\xa2\xe7\xb6\xb2_03_02\xe5\xae\x8c\xe5\x89\xaa.mp3'
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - is_ascii: False
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - contains_chinese: True
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - url_encoded: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:25:47,596 [DEBUG] 原始文件名 - url_decoded: 20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,596 [INFO] 文件名信息：
+2025-01-21 23:25:47,596 [INFO] - 上傳的檔名：20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_03_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:25:47,596 [INFO] - 原始檔名：20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,597 [DEBUG] 檔名處理過程:
+2025-01-21 23:25:47,597 [DEBUG] - 原始檔名: 20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,597 [DEBUG] - 處理後檔名: 20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,597 [DEBUG] - 編碼: b'20231002_\xe5\xbf\x83\xe9\x9d\x88\xe6\x8d\x95\xe5\xa4\xa2\xe7\xb6\xb2_03_02\xe5\xae\x8c\xe5\x89\xaa.mp3'
+2025-01-21 23:25:47,597 [INFO] 處理後檔名：20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,597 [INFO] 完整路徑：E:\CascadeProjects\rsg_mp3_to_text\uploads\20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,601 [INFO] 文件保存成功: E:\CascadeProjects\rsg_mp3_to_text\uploads\20231002_心靈捕夢網_03_02完剪.mp3
+2025-01-21 23:25:47,601 [INFO] 文件大小：3454894 bytes
+2025-01-21 23:25:47,601 [INFO] 文件可以正常讀取
+2025-01-21 23:25:47,602 [INFO] 127.0.0.1 - - [21/Jan/2025 23:25:47] "POST /api/upload HTTP/1.1" 200 -
+2025-01-21 23:25:47,922 [INFO] 127.0.0.1 - - [21/Jan/2025 23:25:47] "OPTIONS /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:25:47,923 [INFO] 開始處理轉錄請求
+2025-01-21 23:25:59,869 [ERROR] 保存 Markdown 文件時出錯: string indices must be integers, not 'str'
+2025-01-21 23:25:59,870 [ERROR] Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 203, in save_transcript_to_markdown
+    start_time = format_timestamp(segment['start'])
+                                  ~~~~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+2025-01-21 23:25:59,870 [INFO] 127.0.0.1 - - [21/Jan/2025 23:25:59] "POST /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:29:07,891 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:29:07,922 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:29:08,578 [INFO]  * Restarting with stat
+2025-01-21 23:29:08,578 [INFO]  * Restarting with stat
+2025-01-21 23:29:08,612 [INFO]  * Restarting with stat
+2025-01-21 23:29:10,489 [INFO] === 系統環境信息 ===
+2025-01-21 23:29:10,489 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:29:10,489 [INFO] 系統平台: win32
+2025-01-21 23:29:10,489 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:29:10,489 [INFO] 默認編碼: utf-8
+2025-01-21 23:29:10,489 [INFO] 環境變量:
+2025-01-21 23:29:10,489 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:29:10,489 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:29:10,489 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:29:10,489 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:29:10,494 [INFO] === 系統環境信息 ===
+2025-01-21 23:29:10,494 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:29:10,494 [INFO] 系統平台: win32
+2025-01-21 23:29:10,494 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:29:10,494 [INFO] 默認編碼: utf-8
+2025-01-21 23:29:10,494 [INFO] 環境變量:
+2025-01-21 23:29:10,494 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:29:10,494 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:29:10,494 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:29:10,494 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:29:10,496 [INFO] === 系統環境信息 ===
+2025-01-21 23:29:10,496 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:29:10,496 [INFO] 系統平台: win32
+2025-01-21 23:29:10,496 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:29:10,496 [INFO] 默認編碼: utf-8
+2025-01-21 23:29:10,496 [INFO] 環境變量:
+2025-01-21 23:29:10,496 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:29:10,496 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:29:10,496 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:29:10,497 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:29:11,667 [WARNING]  * Debugger is active!
+2025-01-21 23:29:11,671 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:29:11,678 [WARNING]  * Debugger is active!
+2025-01-21 23:29:11,679 [WARNING]  * Debugger is active!
+2025-01-21 23:29:11,682 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:29:11,682 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:29:22,068 [INFO] === 系統環境信息 ===
+2025-01-21 23:29:22,068 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:29:22,068 [INFO] 系統平台: win32
+2025-01-21 23:29:22,068 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:29:22,068 [INFO] 默認編碼: utf-8
+2025-01-21 23:29:22,068 [INFO] 環境變量:
+2025-01-21 23:29:22,068 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:29:22,068 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:29:22,068 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:29:22,070 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:29:22,984 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-21 23:29:22,985 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-21 23:29:22,986 [INFO]  * Restarting with stat
+2025-01-21 23:29:24,712 [INFO] === 系統環境信息 ===
+2025-01-21 23:29:24,712 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:29:24,712 [INFO] 系統平台: win32
+2025-01-21 23:29:24,712 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:29:24,712 [INFO] 默認編碼: utf-8
+2025-01-21 23:29:24,712 [INFO] 環境變量:
+2025-01-21 23:29:24,712 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:29:24,712 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:29:24,712 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:29:24,712 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:29:25,614 [WARNING]  * Debugger is active!
+2025-01-21 23:29:25,618 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:29:51,225 [INFO] === 開始處理文件上傳請求 ===
+2025-01-21 23:29:51,225 [INFO] 請求頭: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '4070111', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary3F7U13SySUW3cBZs', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5500', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5500/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
+2025-01-21 23:29:51,234 [INFO] === 文件信息 ===
+2025-01-21 23:29:51,234 [INFO] Content-Type: multipart/form-data; boundary=----WebKitFormBoundary3F7U13SySUW3cBZs
+2025-01-21 23:29:51,234 [INFO] 表單數據: {'originalFilename': '20231002_心靈捕夢網_02_02完剪.mp3'}
+2025-01-21 23:29:51,235 [INFO] 文件對象: <FileStorage: '20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3' ('audio/mpeg')>
+2025-01-21 23:29:51,235 [INFO] 文件名: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 字符串分析:
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 - value: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 - type: str
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 - length: 82
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 - bytes_repr: b'20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3'
+2025-01-21 23:29:51,237 [DEBUG] 上傳的文件名 - is_ascii: True
+2025-01-21 23:29:51,238 [DEBUG] 上傳的文件名 - contains_chinese: False
+2025-01-21 23:29:51,238 [DEBUG] 上傳的文件名 - url_encoded: 20231002_%25E5%25BF%2583%25E9%259D%2588%25E6%258D%2595%25E5%25A4%25A2%25E7%25B6%25B2_02_02%25E5%25AE%258C%25E5%2589%25AA.mp3
+2025-01-21 23:29:51,238 [DEBUG] 上傳的文件名 - url_decoded: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 字符串分析:
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - value: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - type: str
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - length: 26
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - bytes_repr: b'20231002_\xe5\xbf\x83\xe9\x9d\x88\xe6\x8d\x95\xe5\xa4\xa2\xe7\xb6\xb2_02_02\xe5\xae\x8c\xe5\x89\xaa.mp3'
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - is_ascii: False
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - contains_chinese: True
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - url_encoded: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:29:51,238 [DEBUG] 原始文件名 - url_decoded: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,238 [INFO] 文件名信息：
+2025-01-21 23:29:51,238 [INFO] - 上傳的檔名：20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:29:51,238 [INFO] - 原始檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,238 [DEBUG] 檔名處理過程:
+2025-01-21 23:29:51,238 [DEBUG] - 原始檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,238 [DEBUG] - 處理後檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,239 [DEBUG] - 編碼: b'20231002_\xe5\xbf\x83\xe9\x9d\x88\xe6\x8d\x95\xe5\xa4\xa2\xe7\xb6\xb2_02_02\xe5\xae\x8c\xe5\x89\xaa.mp3'
+2025-01-21 23:29:51,239 [INFO] 處理後檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,239 [INFO] 完整路徑：E:\CascadeProjects\rsg_mp3_to_text\uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,244 [INFO] 文件保存成功: E:\CascadeProjects\rsg_mp3_to_text\uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,244 [INFO] 文件大小：4069712 bytes
+2025-01-21 23:29:51,244 [INFO] 文件可以正常讀取
+2025-01-21 23:29:51,246 [INFO] 127.0.0.1 - - [21/Jan/2025 23:29:51] "POST /api/upload HTTP/1.1" 200 -
+2025-01-21 23:29:51,565 [INFO] 127.0.0.1 - - [21/Jan/2025 23:29:51] "OPTIONS /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:29:51,567 [INFO] 開始轉錄音頻文件:
+2025-01-21 23:29:51,567 [INFO] - 檔案路徑: E:\CascadeProjects\rsg_mp3_to_text\uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:29:51,568 [INFO] - 原始檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:30:05,242 [INFO] 準備保存 Markdown 文件:
+2025-01-21 23:30:05,242 [INFO] - 原始檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:30:05,242 [INFO] - Markdown 檔名: 20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:30:05,242 [INFO] - 完整路徑: E:\CascadeProjects\rsg_mp3_to_text\transcripts\20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:30:05,242 [ERROR] 保存 Markdown 文件時出錯: string indices must be integers, not 'str'
+2025-01-21 23:30:05,243 [ERROR] Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 209, in save_transcript_to_markdown
+    start_time = format_timestamp(segment['start'])
+                                  ~~~~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+2025-01-21 23:30:05,243 [ERROR] 保存 Markdown 文件失敗
+2025-01-21 23:30:05,243 [INFO] 127.0.0.1 - - [21/Jan/2025 23:30:05] "[35m[1mPOST /api/transcribe HTTP/1.1[0m" 500 -
+2025-01-21 23:37:08,028 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:08,102 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:08,290 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:08,292 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:08,726 [INFO]  * Restarting with stat
+2025-01-21 23:37:08,858 [INFO]  * Restarting with stat
+2025-01-21 23:37:08,986 [INFO]  * Restarting with stat
+2025-01-21 23:37:09,073 [INFO]  * Restarting with stat
+2025-01-21 23:37:11,456 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:11,456 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:11,456 [INFO] 系統平台: win32
+2025-01-21 23:37:11,456 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:11,456 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:11,456 [INFO] 環境變量:
+2025-01-21 23:37:11,456 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:11,456 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:11,456 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:11,456 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:11,460 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:11,460 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:11,460 [INFO] 系統平台: win32
+2025-01-21 23:37:11,460 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:11,460 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:11,461 [INFO] 環境變量:
+2025-01-21 23:37:11,461 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:11,461 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:11,461 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:11,461 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:11,492 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:11,493 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:11,493 [INFO] 系統平台: win32
+2025-01-21 23:37:11,493 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:11,493 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:11,493 [INFO] 環境變量:
+2025-01-21 23:37:11,493 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:11,493 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:11,493 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:11,493 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:11,494 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:11,494 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:11,494 [INFO] 系統平台: win32
+2025-01-21 23:37:11,494 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:11,494 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:11,494 [INFO] 環境變量:
+2025-01-21 23:37:11,494 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:11,494 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:11,494 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:11,495 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:12,833 [WARNING]  * Debugger is active!
+2025-01-21 23:37:12,838 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:12,839 [WARNING]  * Debugger is active!
+2025-01-21 23:37:12,843 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:12,844 [WARNING]  * Debugger is active!
+2025-01-21 23:37:12,848 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:12,856 [WARNING]  * Debugger is active!
+2025-01-21 23:37:12,860 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:48,965 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:48,966 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:48,972 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:48,974 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:37:49,688 [INFO]  * Restarting with stat
+2025-01-21 23:37:49,730 [INFO]  * Restarting with stat
+2025-01-21 23:37:49,772 [INFO]  * Restarting with stat
+2025-01-21 23:37:49,804 [INFO]  * Restarting with stat
+2025-01-21 23:37:51,591 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:51,591 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:51,591 [INFO] 系統平台: win32
+2025-01-21 23:37:51,591 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:51,591 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:51,592 [INFO] 環境變量:
+2025-01-21 23:37:51,592 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:51,592 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:51,592 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:51,592 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:51,610 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:51,611 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:51,611 [INFO] 系統平台: win32
+2025-01-21 23:37:51,611 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:51,611 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:51,611 [INFO] 環境變量:
+2025-01-21 23:37:51,611 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:51,611 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:51,611 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:51,611 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:51,628 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:51,628 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:51,628 [INFO] 系統平台: win32
+2025-01-21 23:37:51,628 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:51,628 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:51,628 [INFO] 環境變量:
+2025-01-21 23:37:51,628 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:51,628 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:51,628 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:51,628 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:51,687 [INFO] === 系統環境信息 ===
+2025-01-21 23:37:51,687 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:37:51,688 [INFO] 系統平台: win32
+2025-01-21 23:37:51,688 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:37:51,688 [INFO] 默認編碼: utf-8
+2025-01-21 23:37:51,688 [INFO] 環境變量:
+2025-01-21 23:37:51,688 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:37:51,688 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:37:51,688 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:37:51,688 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:37:52,795 [WARNING]  * Debugger is active!
+2025-01-21 23:37:52,800 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:52,838 [WARNING]  * Debugger is active!
+2025-01-21 23:37:52,844 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:52,903 [WARNING]  * Debugger is active!
+2025-01-21 23:37:52,907 [WARNING]  * Debugger is active!
+2025-01-21 23:37:52,908 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:37:52,912 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:38:05,596 [INFO] === 系統環境信息 ===
+2025-01-21 23:38:05,596 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:38:05,596 [INFO] 系統平台: win32
+2025-01-21 23:38:05,596 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:38:05,596 [INFO] 默認編碼: utf-8
+2025-01-21 23:38:05,596 [INFO] 環境變量:
+2025-01-21 23:38:05,596 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:38:05,596 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:38:05,596 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:38:05,596 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:38:06,598 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-21 23:38:06,598 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-21 23:38:06,599 [INFO]  * Restarting with stat
+2025-01-21 23:38:08,339 [INFO] === 系統環境信息 ===
+2025-01-21 23:38:08,339 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:38:08,340 [INFO] 系統平台: win32
+2025-01-21 23:38:08,340 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:38:08,340 [INFO] 默認編碼: utf-8
+2025-01-21 23:38:08,340 [INFO] 環境變量:
+2025-01-21 23:38:08,340 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:38:08,340 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:38:08,340 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:38:08,340 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:38:09,574 [WARNING]  * Debugger is active!
+2025-01-21 23:38:09,576 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:39:15,454 [INFO] === 開始處理文件上傳請求 ===
+2025-01-21 23:39:15,455 [INFO] 請求頭: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '4070111', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary9koNKCXMcV1UoY9c', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5500', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5500/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
+2025-01-21 23:39:15,468 [INFO] === 文件信息 ===
+2025-01-21 23:39:15,468 [INFO] Content-Type: multipart/form-data; boundary=----WebKitFormBoundary9koNKCXMcV1UoY9c
+2025-01-21 23:39:15,468 [INFO] 表單數據: {'originalFilename': '20231002_心靈捕夢網_02_02完剪.mp3'}
+2025-01-21 23:39:15,468 [INFO] 文件對象: <FileStorage: '20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3' ('audio/mpeg')>
+2025-01-21 23:39:15,468 [INFO] 文件名: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:39:15,470 [ERROR] 上傳的文件名 分析字符串時出錯: name 'quote' is not defined
+2025-01-21 23:39:15,471 [ERROR] 原始文件名 分析字符串時出錯: name 'quote' is not defined
+2025-01-21 23:39:15,471 [INFO] 文件名信息：
+2025-01-21 23:39:15,471 [INFO] - 上傳的檔名：20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:39:15,471 [INFO] - 原始檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,471 [INFO] 處理後檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,471 [INFO] 完整路徑：uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,471 [INFO] 刪除已存在的文件: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,478 [INFO] 文件保存成功: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,478 [INFO] 文件大小：4069712 bytes
+2025-01-21 23:39:15,478 [INFO] 文件可以正常讀取
+2025-01-21 23:39:15,480 [INFO] 127.0.0.1 - - [21/Jan/2025 23:39:15] "POST /api/upload HTTP/1.1" 200 -
+2025-01-21 23:39:15,791 [INFO] 127.0.0.1 - - [21/Jan/2025 23:39:15] "OPTIONS /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:39:15,793 [INFO] 開始轉錄音頻文件:
+2025-01-21 23:39:15,793 [INFO] - 檔案路徑: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:15,793 [INFO] - 原始檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:39:29,886 [INFO] === 開始保存 Markdown 文件 ===
+2025-01-21 23:39:29,886 [INFO] 最終文件路徑: transcripts\20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:39:29,886 [DEBUG] 路徑組成檢查: transcripts + 20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:39:29,887 [INFO] 目錄驗證成功
+2025-01-21 23:39:29,887 [ERROR] 保存過程嚴重異常: string indices must be integers, not 'str'
+2025-01-21 23:39:29,887 [ERROR] 異常類型: <class 'TypeError'>
+2025-01-21 23:39:29,887 [ERROR] 堆棧追蹤: Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 228, in save_transcript_to_markdown
+    text = segment['text'].strip()
+           ~~~~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+2025-01-21 23:39:29,888 [ERROR] 保存 Markdown 文件失敗
+2025-01-21 23:39:29,888 [INFO] 127.0.0.1 - - [21/Jan/2025 23:39:29] "[35m[1mPOST /api/transcribe HTTP/1.1[0m" 500 -
+2025-01-21 23:42:46,821 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:42:46,961 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:42:47,346 [INFO]  * Restarting with stat
+2025-01-21 23:42:47,696 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:42:47,697 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:42:47,735 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-21 23:42:47,769 [INFO]  * Restarting with stat
+2025-01-21 23:42:48,431 [INFO]  * Restarting with stat
+2025-01-21 23:42:48,477 [INFO]  * Restarting with stat
+2025-01-21 23:42:48,515 [INFO]  * Restarting with stat
+2025-01-21 23:42:50,052 [INFO] === 系統環境信息 ===
+2025-01-21 23:42:50,052 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:42:50,052 [INFO] 系統平台: win32
+2025-01-21 23:42:50,052 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:42:50,052 [INFO] 默認編碼: utf-8
+2025-01-21 23:42:50,052 [INFO] 環境變量:
+2025-01-21 23:42:50,052 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:42:50,052 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:42:50,052 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:42:50,053 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:42:50,078 [INFO] === 系統環境信息 ===
+2025-01-21 23:42:50,078 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:42:50,078 [INFO] 系統平台: win32
+2025-01-21 23:42:50,078 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:42:50,078 [INFO] 默認編碼: utf-8
+2025-01-21 23:42:50,079 [INFO] 環境變量:
+2025-01-21 23:42:50,079 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:42:50,079 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:42:50,079 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:42:50,079 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:42:50,678 [INFO] === 系統環境信息 ===
+2025-01-21 23:42:50,678 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:42:50,678 [INFO] 系統平台: win32
+2025-01-21 23:42:50,678 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:42:50,678 [INFO] 默認編碼: utf-8
+2025-01-21 23:42:50,678 [INFO] 環境變量:
+2025-01-21 23:42:50,678 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:42:50,678 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:42:50,678 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:42:50,678 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:42:50,719 [INFO] === 系統環境信息 ===
+2025-01-21 23:42:50,719 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:42:50,720 [INFO] 系統平台: win32
+2025-01-21 23:42:50,720 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:42:50,720 [INFO] 默認編碼: utf-8
+2025-01-21 23:42:50,720 [INFO] 環境變量:
+2025-01-21 23:42:50,720 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:42:50,720 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:42:50,720 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:42:50,720 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:42:50,744 [INFO] === 系統環境信息 ===
+2025-01-21 23:42:50,744 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:42:50,745 [INFO] 系統平台: win32
+2025-01-21 23:42:50,745 [INFO] 文件系統編碼: mbcs
+2025-01-21 23:42:50,745 [INFO] 默認編碼: utf-8
+2025-01-21 23:42:50,745 [INFO] 環境變量:
+2025-01-21 23:42:50,745 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:42:50,745 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:42:50,745 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:42:50,746 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:42:51,303 [WARNING]  * Debugger is active!
+2025-01-21 23:42:51,306 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:42:51,416 [WARNING]  * Debugger is active!
+2025-01-21 23:42:51,419 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:42:51,803 [WARNING]  * Debugger is active!
+2025-01-21 23:42:51,808 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:42:51,903 [WARNING]  * Debugger is active!
+2025-01-21 23:42:51,908 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:42:51,963 [WARNING]  * Debugger is active!
+2025-01-21 23:42:51,968 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:43:02,627 [INFO] === 系統環境信息 ===
+2025-01-21 23:43:02,627 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:43:02,627 [INFO] 系統平台: win32
+2025-01-21 23:43:02,627 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:43:02,627 [INFO] 默認編碼: utf-8
+2025-01-21 23:43:02,627 [INFO] 環境變量:
+2025-01-21 23:43:02,627 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:43:02,627 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:43:02,627 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:43:02,627 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:43:03,874 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-21 23:43:03,874 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-21 23:43:03,875 [INFO]  * Restarting with stat
+2025-01-21 23:43:05,544 [INFO] === 系統環境信息 ===
+2025-01-21 23:43:05,544 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-21 23:43:05,545 [INFO] 系統平台: win32
+2025-01-21 23:43:05,545 [INFO] 文件系統編碼: utf-8
+2025-01-21 23:43:05,545 [INFO] 默認編碼: utf-8
+2025-01-21 23:43:05,545 [INFO] 環境變量:
+2025-01-21 23:43:05,545 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-21 23:43:05,545 [INFO] - PYTHONUTF8: 1
+2025-01-21 23:43:05,545 [INFO] - LANG: zh_TW.UTF-8
+2025-01-21 23:43:05,545 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-21 23:43:06,847 [WARNING]  * Debugger is active!
+2025-01-21 23:43:06,849 [INFO]  * Debugger PIN: 498-731-931
+2025-01-21 23:43:38,686 [INFO] === 開始處理文件上傳請求 ===
+2025-01-21 23:43:38,686 [INFO] 請求頭: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '4070111', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundarypVMBDlsx9XQHALlz', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5500', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5500/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
+2025-01-21 23:43:38,695 [INFO] === 文件信息 ===
+2025-01-21 23:43:38,695 [INFO] Content-Type: multipart/form-data; boundary=----WebKitFormBoundarypVMBDlsx9XQHALlz
+2025-01-21 23:43:38,695 [INFO] 表單數據: {'originalFilename': '20231002_心靈捕夢網_02_02完剪.mp3'}
+2025-01-21 23:43:38,695 [INFO] 文件對象: <FileStorage: '20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3' ('audio/mpeg')>
+2025-01-21 23:43:38,695 [INFO] 文件名: 20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:43:38,696 [ERROR] 上傳的文件名 分析字符串時出錯: name 'quote' is not defined
+2025-01-21 23:43:38,696 [ERROR] 原始文件名 分析字符串時出錯: name 'quote' is not defined
+2025-01-21 23:43:38,697 [INFO] 文件名信息：
+2025-01-21 23:43:38,697 [INFO] - 上傳的檔名：20231002_%E5%BF%83%E9%9D%88%E6%8D%95%E5%A4%A2%E7%B6%B2_02_02%E5%AE%8C%E5%89%AA.mp3
+2025-01-21 23:43:38,697 [INFO] - 原始檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:38,697 [INFO] 處理後檔名：20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:38,697 [INFO] 完整路徑：uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:38,697 [INFO] 刪除已存在的文件: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:38,702 [INFO] 文件保存成功: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:38,702 [INFO] 文件大小：4069712 bytes
+2025-01-21 23:43:38,702 [INFO] 文件可以正常讀取
+2025-01-21 23:43:38,703 [INFO] 127.0.0.1 - - [21/Jan/2025 23:43:38] "POST /api/upload HTTP/1.1" 200 -
+2025-01-21 23:43:39,009 [INFO] 127.0.0.1 - - [21/Jan/2025 23:43:39] "OPTIONS /api/transcribe HTTP/1.1" 200 -
+2025-01-21 23:43:39,011 [INFO] 開始轉錄音頻文件:
+2025-01-21 23:43:39,011 [INFO] - 檔案路徑: uploads\20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:39,011 [INFO] - 原始檔名: 20231002_心靈捕夢網_02_02完剪.mp3
+2025-01-21 23:43:54,568 [INFO] === 開始保存 Markdown 文件 ===
+2025-01-21 23:43:54,568 [INFO] 最終文件路徑: transcripts\20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:43:54,568 [DEBUG] 路徑組成檢查: transcripts + 20231002_心靈捕夢網_02_02完剪.md
+2025-01-21 23:43:54,568 [INFO] 目錄驗證成功
+2025-01-21 23:43:54,571 [INFO] 文件完整性驗證通過
+2025-01-21 23:43:54,572 [INFO] 文件保存成功，大小: 4970 bytes
+2025-01-21 23:43:54,572 [INFO] 轉錄完成，返回結果
+2025-01-21 23:43:54,572 [INFO] 127.0.0.1 - - [21/Jan/2025 23:43:54] "POST /api/transcribe HTTP/1.1" 200 -
+2025-01-23 16:21:35,418 [INFO] === 系統環境信息 ===
+2025-01-23 16:21:35,419 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-23 16:21:35,419 [INFO] 系統平台: win32
+2025-01-23 16:21:35,419 [INFO] 文件系統編碼: utf-8
+2025-01-23 16:21:35,419 [INFO] 默認編碼: utf-8
+2025-01-23 16:21:35,419 [INFO] 環境變量:
+2025-01-23 16:21:35,419 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-23 16:21:35,419 [INFO] - PYTHONUTF8: 1
+2025-01-23 16:21:35,419 [INFO] - LANG: zh_TW.UTF-8
+2025-01-23 16:21:35,419 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-23 16:21:36,292 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-23 16:21:36,292 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-23 16:21:36,293 [INFO]  * Restarting with stat
+2025-01-23 16:21:37,910 [INFO] === 系統環境信息 ===
+2025-01-23 16:21:37,910 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-23 16:21:37,910 [INFO] 系統平台: win32
+2025-01-23 16:21:37,910 [INFO] 文件系統編碼: utf-8
+2025-01-23 16:21:37,910 [INFO] 默認編碼: utf-8
+2025-01-23 16:21:37,910 [INFO] 環境變量:
+2025-01-23 16:21:37,910 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-23 16:21:37,910 [INFO] - PYTHONUTF8: 1
+2025-01-23 16:21:37,910 [INFO] - LANG: zh_TW.UTF-8
+2025-01-23 16:21:37,910 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-23 16:21:38,694 [WARNING]  * Debugger is active!
+2025-01-23 16:21:38,696 [INFO]  * Debugger PIN: 498-731-931
+2025-01-23 16:23:50,956 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:50,957 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:50,959 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:50,960 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:50,963 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:50,963 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:51,077 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-01-23 16:23:51,839 [INFO]  * Restarting with stat
+2025-01-23 16:23:54,273 [INFO] === 系統環境信息 ===
+2025-01-23 16:23:54,274 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-23 16:23:54,274 [INFO] 系統平台: win32
+2025-01-23 16:23:54,274 [INFO] 文件系統編碼: utf-8
+2025-01-23 16:23:54,274 [INFO] 默認編碼: utf-8
+2025-01-23 16:23:54,274 [INFO] 環境變量:
+2025-01-23 16:23:54,274 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-23 16:23:54,274 [INFO] - PYTHONUTF8: 1
+2025-01-23 16:23:54,274 [INFO] - LANG: zh_TW.UTF-8
+2025-01-23 16:23:54,274 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-23 16:23:55,091 [WARNING]  * Debugger is active!
+2025-01-23 16:23:55,094 [INFO]  * Debugger PIN: 498-731-931
+2025-01-23 16:24:10,782 [INFO] === 系統環境信息 ===
+2025-01-23 16:24:10,782 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-23 16:24:10,783 [INFO] 系統平台: win32
+2025-01-23 16:24:10,783 [INFO] 文件系統編碼: utf-8
+2025-01-23 16:24:10,783 [INFO] 默認編碼: utf-8
+2025-01-23 16:24:10,783 [INFO] 環境變量:
+2025-01-23 16:24:10,783 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-23 16:24:10,783 [INFO] - PYTHONUTF8: 1
+2025-01-23 16:24:10,783 [INFO] - LANG: zh_TW.UTF-8
+2025-01-23 16:24:10,783 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-23 16:24:11,611 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-01-23 16:24:11,611 [INFO] [33mPress CTRL+C to quit[0m
+2025-01-23 16:24:11,612 [INFO]  * Restarting with stat
+2025-01-23 16:24:13,214 [INFO] === 系統環境信息 ===
+2025-01-23 16:24:13,214 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-01-23 16:24:13,214 [INFO] 系統平台: win32
+2025-01-23 16:24:13,214 [INFO] 文件系統編碼: utf-8
+2025-01-23 16:24:13,214 [INFO] 默認編碼: utf-8
+2025-01-23 16:24:13,214 [INFO] 環境變量:
+2025-01-23 16:24:13,214 [INFO] - PYTHONIOENCODING: utf-8
+2025-01-23 16:24:13,214 [INFO] - PYTHONUTF8: 1
+2025-01-23 16:24:13,214 [INFO] - LANG: zh_TW.UTF-8
+2025-01-23 16:24:13,214 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-01-23 16:24:13,971 [WARNING]  * Debugger is active!
+2025-01-23 16:24:13,974 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:16:55,353 [INFO] === 系統環境信息 ===
+2025-02-12 20:16:55,353 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:16:55,353 [INFO] 系統平台: win32
+2025-02-12 20:16:55,353 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:16:55,353 [INFO] 默認編碼: utf-8
+2025-02-12 20:16:55,354 [INFO] 環境變量:
+2025-02-12 20:16:55,354 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:16:55,354 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:16:55,354 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:16:55,354 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:16:56,387 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:16:56,387 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:16:56,391 [INFO]  * Restarting with stat
+2025-02-12 20:16:58,126 [INFO] === 系統環境信息 ===
+2025-02-12 20:16:58,126 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:16:58,127 [INFO] 系統平台: win32
+2025-02-12 20:16:58,127 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:16:58,127 [INFO] 默認編碼: utf-8
+2025-02-12 20:16:58,127 [INFO] 環境變量:
+2025-02-12 20:16:58,127 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:16:58,127 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:16:58,127 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:16:58,127 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:16:59,008 [WARNING]  * Debugger is active!
+2025-02-12 20:16:59,011 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:17:08,331 [INFO] 127.0.0.1 - - [12/Feb/2025 20:17:08] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-12 20:17:08,666 [INFO] 127.0.0.1 - - [12/Feb/2025 20:17:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-12 20:18:10,870 [INFO] 127.0.0.1 - - [12/Feb/2025 20:18:10] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-12 20:19:19,474 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:19:19,941 [INFO]  * Restarting with stat
+2025-02-12 20:19:22,584 [WARNING]  * Debugger is active!
+2025-02-12 20:19:22,587 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:19:38,868 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:19:38,868 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:19:38,873 [INFO]  * Restarting with stat
+2025-02-12 20:19:40,952 [WARNING]  * Debugger is active!
+2025-02-12 20:19:40,958 [INFO]  * Debugger PIN: 135-978-165
+2025-02-12 20:21:28,002 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:21:28,399 [INFO]  * Restarting with stat
+2025-02-12 20:21:28,856 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:21:30,257 [INFO] === 系統環境信息 ===
+2025-02-12 20:21:30,257 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:21:30,257 [INFO] 系統平台: win32
+2025-02-12 20:21:30,257 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:21:30,257 [INFO] 默認編碼: utf-8
+2025-02-12 20:21:30,257 [INFO] 環境變量:
+2025-02-12 20:21:30,257 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:21:30,257 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:21:30,257 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:21:30,258 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:21:31,065 [WARNING]  * Debugger is active!
+2025-02-12 20:21:31,068 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:21:59,665 [INFO] === 系統環境信息 ===
+2025-02-12 20:21:59,666 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:21:59,666 [INFO] 系統平台: win32
+2025-02-12 20:21:59,666 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:21:59,666 [INFO] 默認編碼: utf-8
+2025-02-12 20:21:59,667 [INFO] 環境變量:
+2025-02-12 20:21:59,667 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:21:59,667 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:21:59,667 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:21:59,667 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:22:00,223 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:22:00,223 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:22:00,224 [INFO]  * Restarting with stat
+2025-02-12 20:22:01,629 [INFO] === 系統環境信息 ===
+2025-02-12 20:22:01,629 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:22:01,629 [INFO] 系統平台: win32
+2025-02-12 20:22:01,629 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:22:01,629 [INFO] 默認編碼: utf-8
+2025-02-12 20:22:01,629 [INFO] 環境變量:
+2025-02-12 20:22:01,629 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:22:01,629 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:22:01,629 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:22:01,630 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:22:02,187 [WARNING]  * Debugger is active!
+2025-02-12 20:22:02,192 [INFO]  * Debugger PIN: 135-978-165
+2025-02-12 20:25:29,996 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:25:30,242 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:25:30,438 [INFO]  * Restarting with stat
+2025-02-12 20:25:32,274 [INFO] === 系統環境信息 ===
+2025-02-12 20:25:32,274 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:25:32,274 [INFO] 系統平台: win32
+2025-02-12 20:25:32,274 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:25:32,274 [INFO] 默認編碼: utf-8
+2025-02-12 20:25:32,275 [INFO] 環境變量:
+2025-02-12 20:25:32,275 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:25:32,275 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:25:32,275 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:25:32,275 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:25:33,075 [WARNING]  * Debugger is active!
+2025-02-12 20:25:33,079 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:26:05,192 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:26:05,585 [INFO]  * Restarting with stat
+2025-02-12 20:26:07,333 [INFO] === 系統環境信息 ===
+2025-02-12 20:26:07,334 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:26:07,334 [INFO] 系統平台: win32
+2025-02-12 20:26:07,334 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:26:07,334 [INFO] 默認編碼: utf-8
+2025-02-12 20:26:07,334 [INFO] 環境變量:
+2025-02-12 20:26:07,334 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:26:07,335 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:26:07,335 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:26:07,335 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:26:08,133 [WARNING]  * Debugger is active!
+2025-02-12 20:26:08,135 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:26:21,186 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:26:21,549 [INFO]  * Restarting with stat
+2025-02-12 20:26:23,262 [INFO] === 系統環境信息 ===
+2025-02-12 20:26:23,262 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:26:23,262 [INFO] 系統平台: win32
+2025-02-12 20:26:23,262 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:26:23,262 [INFO] 默認編碼: utf-8
+2025-02-12 20:26:23,263 [INFO] 環境變量:
+2025-02-12 20:26:23,263 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:26:23,263 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:26:23,263 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:26:23,264 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:26:24,055 [WARNING]  * Debugger is active!
+2025-02-12 20:26:24,058 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:28:26,874 [INFO] 127.0.0.1 - - [12/Feb/2025 20:28:26] "GET / HTTP/1.1" 200 -
+2025-02-12 20:28:36,984 [INFO] 127.0.0.1 - - [12/Feb/2025 20:28:36] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:28:37,261 [INFO] 127.0.0.1 - - [12/Feb/2025 20:28:37] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:39:41,514 [INFO] === 系統環境信息 ===
+2025-02-12 20:39:41,515 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:39:41,515 [INFO] 系統平台: win32
+2025-02-12 20:39:41,515 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:39:41,515 [INFO] 默認編碼: utf-8
+2025-02-12 20:39:41,515 [INFO] 環境變量:
+2025-02-12 20:39:41,515 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:39:41,515 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:39:41,515 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:39:41,515 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:39:42,333 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:39:42,333 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:39:42,337 [INFO]  * Restarting with stat
+2025-02-12 20:39:43,835 [INFO] === 系統環境信息 ===
+2025-02-12 20:39:43,835 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:39:43,835 [INFO] 系統平台: win32
+2025-02-12 20:39:43,835 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:39:43,835 [INFO] 默認編碼: utf-8
+2025-02-12 20:39:43,835 [INFO] 環境變量:
+2025-02-12 20:39:43,835 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:39:43,835 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:39:43,835 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:39:43,835 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:39:44,460 [WARNING]  * Debugger is active!
+2025-02-12 20:39:44,465 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:43:15,621 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:15] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:43:15,767 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:15] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:43:17,084 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:17] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:43:17,175 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:17] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:43:18,290 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:18] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:43:18,373 [INFO] 127.0.0.1 - - [12/Feb/2025 20:43:18] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:44:12,325 [INFO] 127.0.0.1 - - [12/Feb/2025 20:44:12] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:44:12,458 [INFO] 127.0.0.1 - - [12/Feb/2025 20:44:12] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:47:51,480 [INFO] === 系統環境信息 ===
+2025-02-12 20:47:51,480 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:47:51,480 [INFO] 系統平台: win32
+2025-02-12 20:47:51,480 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:47:51,480 [INFO] 默認編碼: utf-8
+2025-02-12 20:47:51,480 [INFO] 環境變量:
+2025-02-12 20:47:51,480 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:47:51,480 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:47:51,480 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:47:51,480 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:47:52,086 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:47:52,087 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:47:52,088 [INFO]  * Restarting with stat
+2025-02-12 20:47:53,584 [INFO] === 系統環境信息 ===
+2025-02-12 20:47:53,584 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:47:53,584 [INFO] 系統平台: win32
+2025-02-12 20:47:53,584 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:47:53,584 [INFO] 默認編碼: utf-8
+2025-02-12 20:47:53,584 [INFO] 環境變量:
+2025-02-12 20:47:53,584 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:47:53,584 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:47:53,584 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:47:53,584 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:47:54,241 [WARNING]  * Debugger is active!
+2025-02-12 20:47:54,245 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:50:41,772 [INFO] 127.0.0.1 - - [12/Feb/2025 20:50:41] "GET / HTTP/1.1" 200 -
+2025-02-12 20:50:42,091 [INFO] 127.0.0.1 - - [12/Feb/2025 20:50:42] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:50:43,299 [INFO] === 系統環境信息 ===
+2025-02-12 20:50:43,300 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:50:43,300 [INFO] 系統平台: win32
+2025-02-12 20:50:43,300 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:50:43,300 [INFO] 默認編碼: utf-8
+2025-02-12 20:50:43,300 [INFO] 環境變量:
+2025-02-12 20:50:43,300 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:50:43,300 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:50:43,300 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:50:43,300 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:50:43,934 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:50:43,934 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:50:43,935 [INFO]  * Restarting with stat
+2025-02-12 20:50:45,426 [INFO] === 系統環境信息 ===
+2025-02-12 20:50:45,426 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:50:45,426 [INFO] 系統平台: win32
+2025-02-12 20:50:45,426 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:50:45,427 [INFO] 默認編碼: utf-8
+2025-02-12 20:50:45,427 [INFO] 環境變量:
+2025-02-12 20:50:45,427 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:50:45,427 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:50:45,427 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:50:45,427 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:50:46,099 [WARNING]  * Debugger is active!
+2025-02-12 20:50:46,103 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:51:06,799 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:06] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:51:07,107 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:07] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:51:08,613 [INFO] === 系統環境信息 ===
+2025-02-12 20:51:08,614 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:51:08,614 [INFO] 系統平台: win32
+2025-02-12 20:51:08,614 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:51:08,614 [INFO] 默認編碼: utf-8
+2025-02-12 20:51:08,614 [INFO] 環境變量:
+2025-02-12 20:51:08,615 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:51:08,615 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:51:08,615 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:51:08,615 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:51:09,261 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:51:09,261 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:51:09,262 [INFO]  * Restarting with stat
+2025-02-12 20:51:10,819 [INFO] === 系統環境信息 ===
+2025-02-12 20:51:10,820 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:51:10,820 [INFO] 系統平台: win32
+2025-02-12 20:51:10,820 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:51:10,820 [INFO] 默認編碼: utf-8
+2025-02-12 20:51:10,820 [INFO] 環境變量:
+2025-02-12 20:51:10,820 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:51:10,820 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:51:10,820 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:51:10,820 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:51:11,465 [WARNING]  * Debugger is active!
+2025-02-12 20:51:11,469 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:51:30,083 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:30] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:51:30,229 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:30] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:51:32,172 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:32] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:51:32,256 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:32] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:51:33,405 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:33] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:51:33,494 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:33] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:51:42,519 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:42] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:51:42,620 [INFO] 127.0.0.1 - - [12/Feb/2025 20:51:42] "[33mGET /static/js/app.js HTTP/1.1[0m" 404 -
+2025-02-12 20:52:35,315 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:52:35,342 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:52:35,342 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:52:35,344 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:52:35,420 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:52:35,784 [INFO]  * Restarting with stat
+2025-02-12 20:52:35,845 [INFO]  * Restarting with stat
+2025-02-12 20:52:36,002 [INFO]  * Restarting with stat
+2025-02-12 20:52:37,638 [INFO] === 系統環境信息 ===
+2025-02-12 20:52:37,639 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:52:37,639 [INFO] 系統平台: win32
+2025-02-12 20:52:37,639 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:52:37,639 [INFO] 默認編碼: utf-8
+2025-02-12 20:52:37,639 [INFO] 環境變量:
+2025-02-12 20:52:37,639 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:52:37,640 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:52:37,640 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:52:37,640 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:52:37,700 [INFO] === 系統環境信息 ===
+2025-02-12 20:52:37,700 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:52:37,700 [INFO] 系統平台: win32
+2025-02-12 20:52:37,700 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:52:37,701 [INFO] 默認編碼: utf-8
+2025-02-12 20:52:37,701 [INFO] 環境變量:
+2025-02-12 20:52:37,701 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:52:37,701 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:52:37,701 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:52:37,701 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:52:38,297 [INFO] === 系統環境信息 ===
+2025-02-12 20:52:38,297 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:52:38,297 [INFO] 系統平台: win32
+2025-02-12 20:52:38,297 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:52:38,297 [INFO] 默認編碼: utf-8
+2025-02-12 20:52:38,297 [INFO] 環境變量:
+2025-02-12 20:52:38,297 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:52:38,297 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:52:38,297 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:52:38,298 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:52:38,306 [WARNING]  * Debugger is active!
+2025-02-12 20:52:38,311 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:52:38,435 [WARNING]  * Debugger is active!
+2025-02-12 20:52:38,441 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:52:39,207 [WARNING]  * Debugger is active!
+2025-02-12 20:52:39,211 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:52:44,870 [INFO] 127.0.0.1 - - [12/Feb/2025 20:52:44] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:52:45,118 [INFO] 127.0.0.1 - - [12/Feb/2025 20:52:45] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 20:52:46,298 [INFO] === 系統環境信息 ===
+2025-02-12 20:52:46,298 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:52:46,298 [INFO] 系統平台: win32
+2025-02-12 20:52:46,298 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:52:46,299 [INFO] 默認編碼: utf-8
+2025-02-12 20:52:46,299 [INFO] 環境變量:
+2025-02-12 20:52:46,299 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:52:46,299 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:52:46,299 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:52:46,299 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:52:46,855 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:52:46,856 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:52:46,856 [INFO]  * Restarting with stat
+2025-02-12 20:52:48,313 [INFO] === 系統環境信息 ===
+2025-02-12 20:52:48,313 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:52:48,313 [INFO] 系統平台: win32
+2025-02-12 20:52:48,314 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:52:48,314 [INFO] 默認編碼: utf-8
+2025-02-12 20:52:48,314 [INFO] 環境變量:
+2025-02-12 20:52:48,314 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:52:48,315 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:52:48,315 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:52:48,315 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:52:48,896 [WARNING]  * Debugger is active!
+2025-02-12 20:52:48,903 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:53:10,136 [INFO] 127.0.0.1 - - [12/Feb/2025 20:53:10] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 20:53:32,571 [INFO] 127.0.0.1 - - [12/Feb/2025 20:53:32] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:53:33,033 [INFO] 127.0.0.1 - - [12/Feb/2025 20:53:33] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 20:54:47,062 [INFO] 127.0.0.1 - - [12/Feb/2025 20:54:47] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 20:56:23,097 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:56:23,135 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:56:23,371 [INFO]  * Restarting with stat
+2025-02-12 20:56:23,651 [INFO]  * Restarting with stat
+2025-02-12 20:56:23,691 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:56:23,808 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 20:56:23,996 [INFO]  * Restarting with stat
+2025-02-12 20:56:24,133 [INFO]  * Restarting with stat
+2025-02-12 20:56:25,121 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:25,122 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:56:25,122 [INFO] 系統平台: win32
+2025-02-12 20:56:25,122 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:56:25,122 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:25,122 [INFO] 環境變量:
+2025-02-12 20:56:25,122 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:25,122 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:25,122 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:25,122 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:25,768 [WARNING]  * Debugger is active!
+2025-02-12 20:56:25,773 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:56:25,804 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:25,806 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:56:25,806 [INFO] 系統平台: win32
+2025-02-12 20:56:25,806 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:56:25,806 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:25,806 [INFO] 環境變量:
+2025-02-12 20:56:25,806 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:25,806 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:25,806 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:25,806 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:25,825 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:25,825 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 20:56:25,825 [INFO] 系統平台: win32
+2025-02-12 20:56:25,826 [INFO] 文件系統編碼: utf-8
+2025-02-12 20:56:25,826 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:25,826 [INFO] 環境變量:
+2025-02-12 20:56:25,826 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:25,826 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:25,826 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:25,826 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:26,207 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:26,207 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:56:26,207 [INFO] 系統平台: win32
+2025-02-12 20:56:26,207 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:56:26,208 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:26,208 [INFO] 環境變量:
+2025-02-12 20:56:26,208 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:26,208 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:26,209 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:26,209 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:26,427 [WARNING]  * Debugger is active!
+2025-02-12 20:56:26,434 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:56:26,899 [WARNING]  * Debugger is active!
+2025-02-12 20:56:26,905 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:56:26,980 [WARNING]  * Debugger is active!
+2025-02-12 20:56:26,983 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 20:56:50,941 [INFO] 127.0.0.1 - - [12/Feb/2025 20:56:50] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 20:56:51,217 [INFO] 127.0.0.1 - - [12/Feb/2025 20:56:51] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 20:56:52,390 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:52,390 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:56:52,390 [INFO] 系統平台: win32
+2025-02-12 20:56:52,390 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:56:52,390 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:52,390 [INFO] 環境變量:
+2025-02-12 20:56:52,390 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:52,390 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:52,390 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:52,391 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:53,007 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 20:56:53,007 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 20:56:53,007 [INFO]  * Restarting with stat
+2025-02-12 20:56:54,492 [INFO] === 系統環境信息 ===
+2025-02-12 20:56:54,492 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 20:56:54,492 [INFO] 系統平台: win32
+2025-02-12 20:56:54,492 [INFO] 文件系統編碼: mbcs
+2025-02-12 20:56:54,492 [INFO] 默認編碼: utf-8
+2025-02-12 20:56:54,492 [INFO] 環境變量:
+2025-02-12 20:56:54,492 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 20:56:54,493 [INFO] - PYTHONUTF8: 1
+2025-02-12 20:56:54,493 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 20:56:54,493 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 20:56:55,150 [WARNING]  * Debugger is active!
+2025-02-12 20:56:55,154 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 20:57:04,944 [INFO] 127.0.0.1 - - [12/Feb/2025 20:57:04] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 20:57:16,882 [INFO] 127.0.0.1 - - [12/Feb/2025 20:57:16] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:00:51,853 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:00:52,454 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:00:52,513 [INFO]  * Restarting with stat
+2025-02-12 21:00:52,699 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:00:52,746 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:00:52,802 [INFO]  * Restarting with stat
+2025-02-12 21:00:52,825 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:00:53,118 [INFO]  * Restarting with stat
+2025-02-12 21:00:53,194 [INFO]  * Restarting with stat
+2025-02-12 21:00:53,217 [INFO]  * Restarting with stat
+2025-02-12 21:00:54,659 [INFO] === 系統環境信息 ===
+2025-02-12 21:00:54,659 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:00:54,660 [INFO] 系統平台: win32
+2025-02-12 21:00:54,660 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:00:54,660 [INFO] 默認編碼: utf-8
+2025-02-12 21:00:54,660 [INFO] 環境變量:
+2025-02-12 21:00:54,660 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:00:54,660 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:00:54,660 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:00:54,661 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:00:54,802 [INFO] === 系統環境信息 ===
+2025-02-12 21:00:54,803 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:00:54,803 [INFO] 系統平台: win32
+2025-02-12 21:00:54,803 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:00:54,803 [INFO] 默認編碼: utf-8
+2025-02-12 21:00:54,803 [INFO] 環境變量:
+2025-02-12 21:00:54,803 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:00:54,804 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:00:54,804 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:00:54,804 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:00:54,924 [INFO] === 系統環境信息 ===
+2025-02-12 21:00:54,962 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:00:54,963 [INFO] 系統平台: win32
+2025-02-12 21:00:54,963 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:00:54,963 [INFO] 默認編碼: utf-8
+2025-02-12 21:00:54,964 [INFO] 環境變量:
+2025-02-12 21:00:54,964 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:00:54,964 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:00:54,964 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:00:54,964 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:00:55,071 [INFO] === 系統環境信息 ===
+2025-02-12 21:00:55,071 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:00:55,071 [INFO] 系統平台: win32
+2025-02-12 21:00:55,071 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:00:55,072 [INFO] 默認編碼: utf-8
+2025-02-12 21:00:55,072 [INFO] 環境變量:
+2025-02-12 21:00:55,072 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:00:55,072 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:00:55,072 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:00:55,072 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:00:55,087 [INFO] === 系統環境信息 ===
+2025-02-12 21:00:55,087 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:00:55,087 [INFO] 系統平台: win32
+2025-02-12 21:00:55,087 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:00:55,087 [INFO] 默認編碼: utf-8
+2025-02-12 21:00:55,087 [INFO] 環境變量:
+2025-02-12 21:00:55,087 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:00:55,087 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:00:55,088 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:00:55,088 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:00:55,472 [WARNING]  * Debugger is active!
+2025-02-12 21:00:55,477 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:00:55,815 [WARNING]  * Debugger is active!
+2025-02-12 21:00:55,822 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:00:55,943 [WARNING]  * Debugger is active!
+2025-02-12 21:00:55,952 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:00:56,044 [WARNING]  * Debugger is active!
+2025-02-12 21:00:56,050 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:00:56,067 [WARNING]  * Debugger is active!
+2025-02-12 21:00:56,071 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:01:08,434 [INFO] 127.0.0.1 - - [12/Feb/2025 21:01:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:01:08,711 [INFO] 127.0.0.1 - - [12/Feb/2025 21:01:08] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:01:10,007 [INFO] === 系統環境信息 ===
+2025-02-12 21:01:10,008 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:01:10,008 [INFO] 系統平台: win32
+2025-02-12 21:01:10,008 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:01:10,009 [INFO] 默認編碼: utf-8
+2025-02-12 21:01:10,009 [INFO] 環境變量:
+2025-02-12 21:01:10,009 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:01:10,009 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:01:10,009 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:01:10,009 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:01:10,656 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 21:01:10,656 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 21:01:10,657 [INFO]  * Restarting with stat
+2025-02-12 21:01:12,255 [INFO] === 系統環境信息 ===
+2025-02-12 21:01:12,255 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:01:12,255 [INFO] 系統平台: win32
+2025-02-12 21:01:12,255 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:01:12,255 [INFO] 默認編碼: utf-8
+2025-02-12 21:01:12,255 [INFO] 環境變量:
+2025-02-12 21:01:12,255 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:01:12,255 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:01:12,255 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:01:12,257 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:01:12,930 [WARNING]  * Debugger is active!
+2025-02-12 21:01:12,934 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:01:44,030 [INFO] 127.0.0.1 - - [12/Feb/2025 21:01:44] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:01:56,328 [INFO] 127.0.0.1 - - [12/Feb/2025 21:01:56] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:03:49,365 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:49,613 [INFO]  * Restarting with stat
+2025-02-12 21:03:49,626 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:49,705 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:49,709 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:50,007 [INFO]  * Restarting with stat
+2025-02-12 21:03:50,084 [INFO]  * Restarting with stat
+2025-02-12 21:03:50,105 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:50,106 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:03:50,340 [INFO]  * Restarting with stat
+2025-02-12 21:03:50,492 [INFO]  * Restarting with stat
+2025-02-12 21:03:50,511 [INFO]  * Restarting with stat
+2025-02-12 21:03:51,674 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:51,674 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:03:51,674 [INFO] 系統平台: win32
+2025-02-12 21:03:51,674 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:03:51,674 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:51,674 [INFO] 環境變量:
+2025-02-12 21:03:51,675 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:51,675 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:51,675 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:51,675 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,063 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:52,065 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:03:52,065 [INFO] 系統平台: win32
+2025-02-12 21:03:52,065 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:03:52,065 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:52,067 [INFO] 環境變量:
+2025-02-12 21:03:52,067 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:52,067 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:52,067 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:52,067 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,151 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:52,152 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:03:52,152 [INFO] 系統平台: win32
+2025-02-12 21:03:52,152 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:03:52,152 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:52,152 [INFO] 環境變量:
+2025-02-12 21:03:52,152 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:52,152 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:52,153 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:52,153 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,435 [WARNING]  * Debugger is active!
+2025-02-12 21:03:52,441 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:03:52,625 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:52,625 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:03:52,625 [INFO] 系統平台: win32
+2025-02-12 21:03:52,626 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:03:52,629 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:52,629 [INFO] 環境變量:
+2025-02-12 21:03:52,636 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:52,636 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:52,636 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:52,637 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,669 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:52,669 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:03:52,669 [INFO] 系統平台: win32
+2025-02-12 21:03:52,669 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:03:52,669 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:52,669 [INFO] 環境變量:
+2025-02-12 21:03:52,669 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:52,669 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:52,670 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:52,670 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,832 [WARNING]  * Debugger is active!
+2025-02-12 21:03:52,839 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:03:52,930 [INFO] === 系統環境信息 ===
+2025-02-12 21:03:52,931 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:03:52,931 [INFO] 系統平台: win32
+2025-02-12 21:03:52,931 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:03:52,931 [INFO] 默認編碼: utf-8
+2025-02-12 21:03:52,931 [INFO] 環境變量:
+2025-02-12 21:03:52,931 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:03:52,931 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:03:52,931 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:03:52,931 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:03:52,968 [WARNING]  * Debugger is active!
+2025-02-12 21:03:52,974 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:03:53,422 [WARNING]  * Debugger is active!
+2025-02-12 21:03:53,427 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:03:53,472 [WARNING]  * Debugger is active!
+2025-02-12 21:03:53,478 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:03:53,947 [WARNING]  * Debugger is active!
+2025-02-12 21:03:53,951 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:06:04,276 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:04,338 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:04,374 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:04,589 [INFO]  * Restarting with stat
+2025-02-12 21:06:04,676 [INFO]  * Restarting with stat
+2025-02-12 21:06:04,845 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:04,898 [INFO]  * Restarting with stat
+2025-02-12 21:06:04,973 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:04,973 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:05,240 [INFO]  * Restarting with stat
+2025-02-12 21:06:05,365 [INFO]  * Restarting with stat
+2025-02-12 21:06:05,371 [INFO]  * Restarting with stat
+2025-02-12 21:06:06,555 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:06,556 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:06,556 [INFO] 系統平台: win32
+2025-02-12 21:06:06,556 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:06,556 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:06,556 [INFO] 環境變量:
+2025-02-12 21:06:06,556 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:06,556 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:06,556 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:06,556 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:06,646 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:06,646 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:06,647 [INFO] 系統平台: win32
+2025-02-12 21:06:06,647 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:06,647 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:06,647 [INFO] 環境變量:
+2025-02-12 21:06:06,647 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:06,647 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:06,647 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:06,647 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:07,377 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:07,382 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:07,385 [INFO] 系統平台: win32
+2025-02-12 21:06:07,386 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:07,388 [WARNING]  * Debugger is active!
+2025-02-12 21:06:07,388 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:07,389 [INFO] 環境變量:
+2025-02-12 21:06:07,389 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:07,390 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:07,390 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:07,390 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:07,395 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:07,410 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:07,411 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:07,411 [INFO] 系統平台: win32
+2025-02-12 21:06:07,411 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:07,411 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:07,411 [INFO] 環境變量:
+2025-02-12 21:06:07,411 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:07,411 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:07,411 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:07,411 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:07,436 [WARNING]  * Debugger is active!
+2025-02-12 21:06:07,440 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:07,441 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:06:07,441 [INFO] 系統平台: win32
+2025-02-12 21:06:07,441 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:06:07,441 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:07,441 [INFO] 環境變量:
+2025-02-12 21:06:07,441 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:07,442 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:07,442 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:07,442 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:07,443 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:07,522 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:07,523 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:07,523 [INFO] 系統平台: win32
+2025-02-12 21:06:07,523 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:07,523 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:07,523 [INFO] 環境變量:
+2025-02-12 21:06:07,523 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:07,523 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:07,523 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:07,524 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:08,233 [WARNING]  * Debugger is active!
+2025-02-12 21:06:08,240 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:08,261 [WARNING]  * Debugger is active!
+2025-02-12 21:06:08,268 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:08,399 [WARNING]  * Debugger is active!
+2025-02-12 21:06:08,405 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:08,586 [WARNING]  * Debugger is active!
+2025-02-12 21:06:08,590 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:06:18,338 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,385 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,524 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,540 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,571 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,630 [INFO]  * Restarting with stat
+2025-02-12 21:06:18,638 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:06:18,742 [INFO]  * Restarting with stat
+2025-02-12 21:06:18,980 [INFO]  * Restarting with stat
+2025-02-12 21:06:18,988 [INFO]  * Restarting with stat
+2025-02-12 21:06:19,006 [INFO]  * Restarting with stat
+2025-02-12 21:06:19,278 [INFO]  * Restarting with stat
+2025-02-12 21:06:20,626 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:20,626 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:20,626 [INFO] 系統平台: win32
+2025-02-12 21:06:20,626 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:20,626 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:20,626 [INFO] 環境變量:
+2025-02-12 21:06:20,627 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:20,627 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:20,627 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:20,627 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:20,714 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:20,714 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:20,716 [INFO] 系統平台: win32
+2025-02-12 21:06:20,716 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:20,716 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:20,716 [INFO] 環境變量:
+2025-02-12 21:06:20,716 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:20,716 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:20,716 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:20,716 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:20,978 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:20,983 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:20,984 [INFO] 系統平台: win32
+2025-02-12 21:06:20,984 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:20,984 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:20,984 [INFO] 環境變量:
+2025-02-12 21:06:20,984 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:20,984 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:20,985 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:20,985 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:21,025 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:21,025 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:21,026 [INFO] 系統平台: win32
+2025-02-12 21:06:21,026 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:21,026 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:21,026 [INFO] 環境變量:
+2025-02-12 21:06:21,027 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:21,027 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:21,027 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:21,027 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:21,107 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:21,108 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:21,108 [INFO] 系統平台: win32
+2025-02-12 21:06:21,109 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:21,109 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:21,109 [INFO] 環境變量:
+2025-02-12 21:06:21,109 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:21,109 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:21,109 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:21,109 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:21,528 [WARNING]  * Debugger is active!
+2025-02-12 21:06:21,534 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:21,574 [WARNING]  * Debugger is active!
+2025-02-12 21:06:21,579 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:21,884 [WARNING]  * Debugger is active!
+2025-02-12 21:06:21,893 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:21,905 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:21,905 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:06:21,905 [INFO] 系統平台: win32
+2025-02-12 21:06:21,906 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:06:21,906 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:21,906 [INFO] 環境變量:
+2025-02-12 21:06:21,906 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:21,906 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:21,906 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:21,906 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:21,983 [WARNING]  * Debugger is active!
+2025-02-12 21:06:21,992 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:22,045 [WARNING]  * Debugger is active!
+2025-02-12 21:06:22,050 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:22,844 [WARNING]  * Debugger is active!
+2025-02-12 21:06:22,848 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:06:29,251 [INFO] 127.0.0.1 - - [12/Feb/2025 21:06:29] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:06:29,515 [INFO] 127.0.0.1 - - [12/Feb/2025 21:06:29] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 21:06:30,768 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:30,768 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:30,768 [INFO] 系統平台: win32
+2025-02-12 21:06:30,768 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:30,768 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:30,768 [INFO] 環境變量:
+2025-02-12 21:06:30,768 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:30,768 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:30,769 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:30,769 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:31,421 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 21:06:31,421 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 21:06:31,422 [INFO]  * Restarting with stat
+2025-02-12 21:06:32,961 [INFO] === 系統環境信息 ===
+2025-02-12 21:06:32,961 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:06:32,961 [INFO] 系統平台: win32
+2025-02-12 21:06:32,961 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:06:32,961 [INFO] 默認編碼: utf-8
+2025-02-12 21:06:32,961 [INFO] 環境變量:
+2025-02-12 21:06:32,961 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:06:32,961 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:06:32,961 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:06:32,961 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:06:33,635 [WARNING]  * Debugger is active!
+2025-02-12 21:06:33,640 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:06:53,109 [INFO] 127.0.0.1 - - [12/Feb/2025 21:06:53] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:07:05,314 [INFO] 127.0.0.1 - - [12/Feb/2025 21:07:05] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:08:35,894 [INFO] 127.0.0.1 - - [12/Feb/2025 21:08:35] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:08:36,052 [INFO] 127.0.0.1 - - [12/Feb/2025 21:08:36] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:09:43,512 [INFO] 127.0.0.1 - - [12/Feb/2025 21:09:43] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:09:55,037 [INFO] 127.0.0.1 - - [12/Feb/2025 21:09:55] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:12:02,349 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:02,395 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:02,396 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:02,695 [INFO]  * Restarting with stat
+2025-02-12 21:12:02,710 [INFO]  * Restarting with stat
+2025-02-12 21:12:02,729 [INFO]  * Restarting with stat
+2025-02-12 21:12:02,783 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:02,830 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:02,911 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:03,033 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:12:03,164 [INFO]  * Restarting with stat
+2025-02-12 21:12:03,248 [INFO]  * Restarting with stat
+2025-02-12 21:12:03,324 [INFO]  * Restarting with stat
+2025-02-12 21:12:03,709 [INFO]  * Restarting with stat
+2025-02-12 21:12:04,800 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:04,800 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:04,800 [INFO] 系統平台: win32
+2025-02-12 21:12:04,801 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:04,801 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:04,801 [INFO] 環境變量:
+2025-02-12 21:12:04,801 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:04,801 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:04,801 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:04,801 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:04,802 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:04,802 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:04,802 [INFO] 系統平台: win32
+2025-02-12 21:12:04,802 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:04,802 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:04,802 [INFO] 環境變量:
+2025-02-12 21:12:04,802 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:04,803 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:04,803 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:04,803 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:04,819 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:04,820 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:04,820 [INFO] 系統平台: win32
+2025-02-12 21:12:04,820 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:04,820 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:04,820 [INFO] 環境變量:
+2025-02-12 21:12:04,820 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:04,821 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:04,821 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:04,821 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:05,348 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:05,348 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:05,348 [INFO] 系統平台: win32
+2025-02-12 21:12:05,348 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:05,348 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:05,348 [INFO] 環境變量:
+2025-02-12 21:12:05,348 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:05,348 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:05,348 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:05,348 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:05,430 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:05,431 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:05,431 [INFO] 系統平台: win32
+2025-02-12 21:12:05,431 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:05,431 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:05,432 [INFO] 環境變量:
+2025-02-12 21:12:05,432 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:05,432 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:05,432 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:05,432 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:05,490 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:05,491 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:05,492 [INFO] 系統平台: win32
+2025-02-12 21:12:05,492 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:05,492 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:05,492 [INFO] 環境變量:
+2025-02-12 21:12:05,492 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:05,492 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:05,494 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:05,494 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:05,676 [WARNING]  * Debugger is active!
+2025-02-12 21:12:05,686 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:05,692 [WARNING]  * Debugger is active!
+2025-02-12 21:12:05,699 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:05,999 [WARNING]  * Debugger is active!
+2025-02-12 21:12:06,006 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:06,306 [WARNING]  * Debugger is active!
+2025-02-12 21:12:06,313 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:06,338 [WARNING]  * Debugger is active!
+2025-02-12 21:12:06,349 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:06,416 [WARNING]  * Debugger is active!
+2025-02-12 21:12:06,422 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:06,474 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:06,475 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:12:06,475 [INFO] 系統平台: win32
+2025-02-12 21:12:06,475 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:12:06,475 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:06,475 [INFO] 環境變量:
+2025-02-12 21:12:06,475 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:06,475 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:06,476 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:06,476 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:07,370 [WARNING]  * Debugger is active!
+2025-02-12 21:12:07,372 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:12:16,122 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:16] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:12:16,380 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:16] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 21:12:17,566 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:17,567 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:17,567 [INFO] 系統平台: win32
+2025-02-12 21:12:17,567 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:17,567 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:17,567 [INFO] 環境變量:
+2025-02-12 21:12:17,567 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:17,567 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:17,567 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:17,567 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:18,196 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 21:12:18,196 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 21:12:18,197 [INFO]  * Restarting with stat
+2025-02-12 21:12:19,787 [INFO] === 系統環境信息 ===
+2025-02-12 21:12:19,787 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:12:19,787 [INFO] 系統平台: win32
+2025-02-12 21:12:19,787 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:12:19,787 [INFO] 默認編碼: utf-8
+2025-02-12 21:12:19,787 [INFO] 環境變量:
+2025-02-12 21:12:19,788 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:12:19,788 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:12:19,788 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:12:19,788 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:12:20,473 [WARNING]  * Debugger is active!
+2025-02-12 21:12:20,477 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:12:38,976 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:38] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:12:39,289 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:39] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:12:44,613 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:44] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:12:56,766 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:56] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:12:56,770 [INFO] 127.0.0.1 - - [12/Feb/2025 21:12:56] "GET /api/progress/20231002__01_02 HTTP/1.1" 200 -
+2025-02-12 21:14:55,927 [INFO] 127.0.0.1 - - [12/Feb/2025 21:14:55] "GET / HTTP/1.1" 200 -
+2025-02-12 21:14:55,950 [INFO] 127.0.0.1 - - [12/Feb/2025 21:14:55] "GET /static/js/app.min.js HTTP/1.1" 200 -
+2025-02-12 21:14:57,559 [INFO] === 系統環境信息 ===
+2025-02-12 21:14:57,559 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:14:57,560 [INFO] 系統平台: win32
+2025-02-12 21:14:57,560 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:14:57,560 [INFO] 默認編碼: utf-8
+2025-02-12 21:14:57,560 [INFO] 環境變量:
+2025-02-12 21:14:57,560 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:14:57,561 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:14:57,561 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:14:57,561 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:14:58,219 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 21:14:58,219 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 21:14:58,220 [INFO]  * Restarting with stat
+2025-02-12 21:14:59,814 [INFO] === 系統環境信息 ===
+2025-02-12 21:14:59,814 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:14:59,814 [INFO] 系統平台: win32
+2025-02-12 21:14:59,815 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:14:59,815 [INFO] 默認編碼: utf-8
+2025-02-12 21:14:59,815 [INFO] 環境變量:
+2025-02-12 21:14:59,815 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:14:59,815 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:14:59,815 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:14:59,815 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:15:00,505 [WARNING]  * Debugger is active!
+2025-02-12 21:15:00,508 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:15:10,582 [INFO] 127.0.0.1 - - [12/Feb/2025 21:15:10] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:15:10,883 [INFO] 127.0.0.1 - - [12/Feb/2025 21:15:10] "[36mGET /static/js/app.min.js HTTP/1.1[0m" 304 -
+2025-02-12 21:15:18,891 [INFO] 127.0.0.1 - - [12/Feb/2025 21:15:18] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:15:18,906 [INFO] 127.0.0.1 - - [12/Feb/2025 21:15:18] "[36mGET /static/js/app.min.js HTTP/1.1[0m" 304 -
+2025-02-12 21:16:04,101 [INFO] 127.0.0.1 - - [12/Feb/2025 21:16:04] "GET / HTTP/1.1" 200 -
+2025-02-12 21:16:04,413 [INFO] 127.0.0.1 - - [12/Feb/2025 21:16:04] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:16:05,938 [INFO] === 系統環境信息 ===
+2025-02-12 21:16:05,938 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:16:05,938 [INFO] 系統平台: win32
+2025-02-12 21:16:05,938 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:16:05,938 [INFO] 默認編碼: utf-8
+2025-02-12 21:16:05,938 [INFO] 環境變量:
+2025-02-12 21:16:05,938 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:16:05,938 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:16:05,938 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:16:05,940 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:16:06,613 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 21:16:06,613 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-12 21:16:06,614 [INFO]  * Restarting with stat
+2025-02-12 21:16:08,145 [INFO] === 系統環境信息 ===
+2025-02-12 21:16:08,145 [INFO] Python 版本: 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+2025-02-12 21:16:08,145 [INFO] 系統平台: win32
+2025-02-12 21:16:08,145 [INFO] 文件系統編碼: mbcs
+2025-02-12 21:16:08,145 [INFO] 默認編碼: utf-8
+2025-02-12 21:16:08,145 [INFO] 環境變量:
+2025-02-12 21:16:08,146 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:16:08,146 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:16:08,146 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:16:08,146 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:16:08,778 [WARNING]  * Debugger is active!
+2025-02-12 21:16:08,784 [INFO]  * Debugger PIN: 292-727-988
+2025-02-12 21:16:25,171 [INFO] 127.0.0.1 - - [12/Feb/2025 21:16:25] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:16:36,358 [INFO] 127.0.0.1 - - [12/Feb/2025 21:16:36] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:16:36,361 [INFO] 127.0.0.1 - - [12/Feb/2025 21:16:36] "GET /api/progress/20231002__03_02 HTTP/1.1" 200 -
+2025-02-12 21:20:57,110 [INFO] 127.0.0.1 - - [12/Feb/2025 21:20:57] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:20:57,261 [INFO] 127.0.0.1 - - [12/Feb/2025 21:20:57] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:21:05,014 [INFO] 127.0.0.1 - - [12/Feb/2025 21:21:05] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:21:16,070 [INFO] 127.0.0.1 - - [12/Feb/2025 21:21:16] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:21:16,072 [INFO] 127.0.0.1 - - [12/Feb/2025 21:21:16] "GET /api/progress/20231002__03_02 HTTP/1.1" 200 -
+2025-02-12 21:25:41,931 [INFO] 127.0.0.1 - - [12/Feb/2025 21:25:41] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:25:42,098 [INFO] 127.0.0.1 - - [12/Feb/2025 21:25:42] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:25:48,663 [INFO] 127.0.0.1 - - [12/Feb/2025 21:25:48] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:25:59,508 [INFO] 127.0.0.1 - - [12/Feb/2025 21:25:59] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:25:59,512 [INFO] 127.0.0.1 - - [12/Feb/2025 21:25:59] "GET /api/progress/20231207__05_0311 HTTP/1.1" 200 -
+2025-02-12 21:31:59,306 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:31:59,698 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:31:59,808 [INFO]  * Restarting with stat
+2025-02-12 21:31:59,958 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:32:00,073 [INFO]  * Restarting with stat
+2025-02-12 21:32:00,079 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:32:00,264 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:32:00,400 [INFO]  * Restarting with stat
+2025-02-12 21:32:00,570 [INFO]  * Restarting with stat
+2025-02-12 21:32:00,820 [INFO]  * Restarting with stat
+2025-02-12 21:32:04,941 [INFO] === 系統環境信息 ===
+2025-02-12 21:32:04,941 [INFO] Python 版本: 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]
+2025-02-12 21:32:04,942 [INFO] 系統平台: win32
+2025-02-12 21:32:04,942 [INFO] 文件系統編碼: utf-8
+2025-02-12 21:32:04,942 [INFO] 默認編碼: utf-8
+2025-02-12 21:32:04,942 [INFO] 環境變量:
+2025-02-12 21:32:04,942 [INFO] - PYTHONIOENCODING: utf-8
+2025-02-12 21:32:04,942 [INFO] - PYTHONUTF8: 1
+2025-02-12 21:32:04,942 [INFO] - LANG: zh_TW.UTF-8
+2025-02-12 21:32:04,942 [INFO] - LC_ALL: zh_TW.UTF-8
+2025-02-12 21:32:05,778 [WARNING]  * Debugger is active!
+2025-02-12 21:32:05,781 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:34:19,261 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:34:19,842 [INFO]  * Restarting with stat
+2025-02-12 21:34:23,817 [WARNING]  * Debugger is active!
+2025-02-12 21:34:23,820 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:39:08,029 [INFO] 127.0.0.1 - - [12/Feb/2025 21:39:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:39:08,296 [INFO] 127.0.0.1 - - [12/Feb/2025 21:39:08] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:39:18,817 [INFO] 127.0.0.1 - - [12/Feb/2025 21:39:18] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:39:49,225 [DEBUG] Checking None for explicit credentials as part of auth process...
+2025-02-12 21:39:49,225 [DEBUG] Checking Cloud SDK credentials as part of auth process...
+2025-02-12 21:39:49,225 [DEBUG] Cloud SDK credentials not found on disk; not using them
+2025-02-12 21:39:49,232 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:39:49,232 [WARNING] Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:39:50,240 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:39:50,255 [WARNING] Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:39:52,133 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:39:52,133 [WARNING] Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:39:52,133 [WARNING] Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 21:39:52,133 [ERROR] Gemini API 錯誤: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+2025-02-12 21:39:52,136 [INFO] 127.0.0.1 - - [12/Feb/2025 21:39:52] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:39:52,141 [INFO] 127.0.0.1 - - [12/Feb/2025 21:39:52] "GET /api/progress/20231207__06_03 HTTP/1.1" 200 -
+2025-02-12 21:51:03,758 [INFO] 127.0.0.1 - - [12/Feb/2025 21:51:03] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:51:03,925 [INFO] 127.0.0.1 - - [12/Feb/2025 21:51:03] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:51:09,706 [INFO] 127.0.0.1 - - [12/Feb/2025 21:51:09] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:51:26,273 [DEBUG] Checking None for explicit credentials as part of auth process...
+2025-02-12 21:51:26,274 [DEBUG] Checking Cloud SDK credentials as part of auth process...
+2025-02-12 21:51:26,274 [DEBUG] Cloud SDK credentials not found on disk; not using them
+2025-02-12 21:51:26,274 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:51:26,275 [WARNING] Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:51:27,259 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:51:27,260 [WARNING] Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:51:29,348 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:51:29,348 [WARNING] Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:51:29,348 [WARNING] Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 21:51:29,348 [ERROR] Gemini API 錯誤: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+2025-02-12 21:51:29,351 [INFO] 127.0.0.1 - - [12/Feb/2025 21:51:29] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:51:29,354 [INFO] 127.0.0.1 - - [12/Feb/2025 21:51:29] "GET /api/progress/20231207__07_03 HTTP/1.1" 200 -
+2025-02-12 21:52:56,470 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 21:52:57,118 [INFO]  * Restarting with stat
+2025-02-12 21:53:00,331 [WARNING]  * Debugger is active!
+2025-02-12 21:53:00,335 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 21:53:45,590 [INFO] 127.0.0.1 - - [12/Feb/2025 21:53:45] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 21:53:45,727 [INFO] 127.0.0.1 - - [12/Feb/2025 21:53:45] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 21:53:52,686 [INFO] 127.0.0.1 - - [12/Feb/2025 21:53:52] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 21:54:12,393 [DEBUG] Checking None for explicit credentials as part of auth process...
+2025-02-12 21:54:12,393 [DEBUG] Checking Cloud SDK credentials as part of auth process...
+2025-02-12 21:54:12,393 [DEBUG] Cloud SDK credentials not found on disk; not using them
+2025-02-12 21:54:12,395 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:54:12,396 [WARNING] Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:54:13,379 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:54:13,379 [WARNING] Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:54:15,464 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 21:54:15,465 [WARNING] Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 21:54:15,465 [WARNING] Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 21:54:15,465 [ERROR] Gemini API 錯誤: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+2025-02-12 21:54:15,467 [INFO] 127.0.0.1 - - [12/Feb/2025 21:54:15] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 21:54:15,471 [INFO] 127.0.0.1 - - [12/Feb/2025 21:54:15] "GET /api/progress/20231207__08_03 HTTP/1.1" 200 -
+2025-02-12 22:07:00,638 [INFO] 127.0.0.1 - - [12/Feb/2025 22:07:00] "GET / HTTP/1.1" 200 -
+2025-02-12 22:07:00,960 [INFO] 127.0.0.1 - - [12/Feb/2025 22:07:00] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:07:08,123 [INFO] 127.0.0.1 - - [12/Feb/2025 22:07:08] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:07:16,771 [DEBUG] Checking None for explicit credentials as part of auth process...
+2025-02-12 22:07:16,771 [DEBUG] Checking Cloud SDK credentials as part of auth process...
+2025-02-12 22:07:16,772 [DEBUG] Cloud SDK credentials not found on disk; not using them
+2025-02-12 22:07:16,772 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 22:07:16,772 [WARNING] Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:07:17,788 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 22:07:17,788 [WARNING] Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:07:19,595 [DEBUG] Making request: GET http://169.254.169.254
+2025-02-12 22:07:19,596 [WARNING] Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:07:19,596 [WARNING] Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 22:07:19,596 [ERROR] Gemini API 錯誤: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+2025-02-12 22:07:19,598 [INFO] 127.0.0.1 - - [12/Feb/2025 22:07:19] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 22:07:19,601 [INFO] 127.0.0.1 - - [12/Feb/2025 22:07:19] "GET /api/progress/20231207__09_03 HTTP/1.1" 200 -
+2025-02-12 22:19:26,833 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:19:27,433 [INFO]  * Restarting with stat
+2025-02-12 22:21:47,506 [WARNING]  * Debugger is active!
+2025-02-12 22:21:47,508 [INFO]  * Debugger PIN: 498-731-931
+2025-02-12 22:21:47,518 [INFO] 127.0.0.1 - - [12/Feb/2025 22:21:47] "GET / HTTP/1.1" 200 -
+2025-02-12 22:21:47,520 [INFO] 127.0.0.1 - - [12/Feb/2025 22:21:47] "GET / HTTP/1.1" 200 -
+2025-02-12 22:21:47,521 [INFO] 127.0.0.1 - - [12/Feb/2025 22:21:47] "GET / HTTP/1.1" 200 -
+2025-02-12 22:21:47,522 [INFO] 127.0.0.1 - - [12/Feb/2025 22:21:47] "GET / HTTP/1.1" 200 -
+2025-02-12 22:21:47,888 [INFO] 127.0.0.1 - - [12/Feb/2025 22:21:47] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:22:19,201 [INFO] 127.0.0.1 - - [12/Feb/2025 22:22:19] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:23:33,335 [INFO] 127.0.0.1 - - [12/Feb/2025 22:23:33] "GET / HTTP/1.1" 200 -
+2025-02-12 22:23:34,060 [INFO] 127.0.0.1 - - [12/Feb/2025 22:23:34] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:23:41,531 [INFO] 127.0.0.1 - - [12/Feb/2025 22:23:41] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:23:45,630 [ERROR] 轉錄失敗: The size of tensor a (243) must match the size of tensor b (3) at non-singleton dimension 3
+2025-02-12 22:23:45,660 [INFO] 127.0.0.1 - - [12/Feb/2025 22:23:45] "[35m[1mPOST /api/transcribe HTTP/1.1[0m" 500 -
+2025-02-12 22:29:58,250 [WARNING] Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:29:59,242 [WARNING] Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:30:01,058 [WARNING] Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:30:01,058 [WARNING] Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 22:30:01,058 [ERROR] Gemini API 錯誤: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+2025-02-12 22:30:01,061 [INFO] 127.0.0.1 - - [12/Feb/2025 22:30:01] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 22:30:18,714 [INFO]  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:30:19,523 [INFO]  * Restarting with stat
+2025-02-12 22:30:22,299 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:30:28,653 - __main__ - INFO - Whisper 模型載入成功
+2025-02-12 22:30:28,662 - werkzeug - WARNING -  * Debugger is active!
+2025-02-12 22:30:28,666 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-12 22:33:00,534 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:33:10,707 - __main__ - INFO - Whisper 模型載入成功
+2025-02-12 22:33:10,730 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-12 22:33:10,730 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-12 22:33:10,731 - werkzeug - INFO -  * Restarting with stat
+2025-02-12 22:33:13,146 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:33:23,662 - __main__ - INFO - Whisper 模型載入成功
+2025-02-12 22:33:23,715 - werkzeug - WARNING -  * Debugger is active!
+2025-02-12 22:33:23,791 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-12 22:37:40,968 - app - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:37:51,569 - app - INFO - Whisper 模型載入成功
+2025-02-12 22:37:51,584 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 22:37:51,584 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-12 22:37:51,586 - werkzeug - INFO -  * Restarting with stat
+2025-02-12 22:37:54,115 - app - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:38:05,508 - app - INFO - Whisper 模型載入成功
+2025-02-12 22:38:05,519 - werkzeug - WARNING -  * Debugger is active!
+2025-02-12 22:38:05,521 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-12 22:45:33,441 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:45:33] "GET / HTTP/1.1" 200 -
+2025-02-12 22:45:33,772 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:45:33] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:45:39,673 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:45:39] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:45:39,984 - app - INFO - 開始處理文件: 20231207  10 03.mp3
+2025-02-12 22:45:39,984 - app - INFO - 開始音頻預處理
+2025-02-12 22:45:39,984 - app - INFO - 開始預處理音頻文件: uploads\20231207  10 03.mp3
+2025-02-12 22:45:40,247 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  10 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 22:45:41,016 - app - ERROR - 音頻預處理失敗: 'AudioSegment' object has no attribute 'format_info'
+2025-02-12 22:45:41,018 - app - ERROR - Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 95, in preprocess_audio
+    logger.info(f"音頻文件信息: 格式={audio.format_info}, 通道數={audio.channels}, 採樣率={audio.frame_rate}")
+                                      ^^^^^^^^^^^^^^^^^
+AttributeError: 'AudioSegment' object has no attribute 'format_info'
+
+2025-02-12 22:45:41,018 - app - ERROR - 轉錄過程中發生錯誤: 'AudioSegment' object has no attribute 'format_info'
+2025-02-12 22:45:41,022 - app - ERROR - Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 201, in api_transcribe
+    processed_file = preprocess_audio(file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 95, in preprocess_audio
+    logger.info(f"音頻文件信息: 格式={audio.format_info}, 通道數={audio.channels}, 採樣率={audio.frame_rate}")
+                                      ^^^^^^^^^^^^^^^^^
+AttributeError: 'AudioSegment' object has no attribute 'format_info'
+
+2025-02-12 22:45:41,028 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:45:41] "[35m[1mPOST /api/transcribe HTTP/1.1[0m" 500 -
+2025-02-12 22:46:37,543 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:46:37,909 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:46:38,401 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:46:38,827 [INFO]  * Restarting with stat
+2025-02-12 22:46:41,788 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:46:48,310 - __main__ - INFO - Whisper 模型載入成功
+2025-02-12 22:46:48,321 - werkzeug - WARNING -  * Debugger is active!
+2025-02-12 22:46:48,323 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-12 22:47:24,470 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:47:25,339 [INFO]  * Restarting with stat
+2025-02-12 22:47:27,634 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:47:33,424 - __main__ - INFO - Whisper 模型載入成功
+2025-02-12 22:47:33,434 - werkzeug - WARNING -  * Debugger is active!
+2025-02-12 22:47:33,437 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-12 22:47:36,056 - app - INFO - 正在載入 Whisper 模型...
+2025-02-12 22:47:43,343 - app - INFO - Whisper 模型載入成功
+2025-02-12 22:47:43,350 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-12 22:47:43,350 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-12 22:48:19,648 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:48:19] "GET / HTTP/1.1" 200 -
+2025-02-12 22:48:20,034 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:48:20] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:48:46,741 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:48:46] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:48:47,060 - app - INFO - 開始處理文件: 20231207  10 03.mp3
+2025-02-12 22:48:47,060 - app - INFO - 開始音頻預處理
+2025-02-12 22:48:47,060 - app - INFO - 開始預處理音頻文件: uploads\20231207  10 03.mp3
+2025-02-12 22:48:47,087 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  10 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 22:48:47,840 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 22:48:47,843 - app - INFO - 轉換為單聲道
+2025-02-12 22:48:47,985 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 22:48:48,241 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  10 03.mp3.temp.wav
+2025-02-12 22:48:48,242 - app - INFO - 音頻預處理完成
+2025-02-12 22:48:48,242 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 22:51:11,311 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:51:11] "GET / HTTP/1.1" 200 -
+2025-02-12 22:51:11,994 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:51:11] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:51:18,651 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:51:18] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:51:18,965 - app - INFO - 開始處理文件: 20231207  10 03.mp3
+2025-02-12 22:51:18,965 - app - INFO - 開始音頻預處理
+2025-02-12 22:51:18,965 - app - INFO - 開始預處理音頻文件: uploads\20231207  10 03.mp3
+2025-02-12 22:51:18,993 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  10 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 22:51:19,969 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 22:51:19,969 - app - INFO - 轉換為單聲道
+2025-02-12 22:51:20,093 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 22:51:20,355 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  10 03.mp3.temp.wav
+2025-02-12 22:51:20,356 - app - INFO - 音頻預處理完成
+2025-02-12 22:51:20,356 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 22:51:22,708 - app - ERROR - 轉錄過程中發生錯誤: The size of tensor a (296) must match the size of tensor b (3) at non-singleton dimension 3
+2025-02-12 22:51:22,726 - app - ERROR - Traceback (most recent call last):
+  File "E:\CascadeProjects\rsg_mp3_to_text\app.py", line 216, in api_transcribe
+    result = model.transcribe(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\transcribe.py", line 240, in transcribe
+    result: DecodingResult = decode_with_fallback(mel_segment)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\transcribe.py", line 170, in decode_with_fallback
+    decode_result = model.decode(segment, options)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\decoding.py", line 824, in decode
+    result = DecodingTask(model, options).run(mel)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\decoding.py", line 737, in run
+    tokens, sum_logprobs, no_speech_probs = self._main_loop(audio_features, tokens)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\decoding.py", line 687, in _main_loop
+    logits = self.inference.logits(tokens, audio_features)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\decoding.py", line 163, in logits
+    return self.model.decoder(tokens, audio_features, kv_cache=self.kv_cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\model.py", line 211, in forward
+    x = block(x, xa, mask=self.mask, kv_cache=kv_cache)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\model.py", line 136, in forward
+    x = x + self.attn(self.attn_ln(x), mask=mask, kv_cache=kv_cache)[0]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\model.py", line 90, in forward
+    wv, qk = self.qkv_attention(q, k, v, mask)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zellh\AppData\Local\Programs\Python\Python312\Lib\site-packages\whisper\model.py", line 104, in qkv_attention
+    qk = qk + mask[:n_ctx, :n_ctx]
+         ~~~^~~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (296) must match the size of tensor b (3) at non-singleton dimension 3
+
+2025-02-12 22:51:22,748 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:51:22] "[35m[1mPOST /api/transcribe HTTP/1.1[0m" 500 -
+2025-02-12 22:54:01,128 - app - INFO - Whisper 轉錄完成
+2025-02-12 22:54:01,130 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 22:54:01,130 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 22:54:01,130 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 22:54:01,132 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 22:54:01,133 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:54:02,111 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 22:54:02,111 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:54:04,042 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 22:54:04,042 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 22:54:04,042 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 22:54:04,042 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 22:54:04,046 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:54:04] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 22:55:55,453 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-12 22:55:56,374 [INFO]  * Restarting with stat
+2025-02-12 22:58:01,120 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:58:01] "GET / HTTP/1.1" 200 -
+2025-02-12 22:58:01,468 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:58:01] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-12 22:58:05,788 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 22:58:05] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 22:58:06,098 - app - INFO - 開始處理文件: 20231207  10 03.mp3
+2025-02-12 22:58:06,098 - app - INFO - 開始音頻預處理
+2025-02-12 22:58:06,098 - app - INFO - 開始預處理音頻文件: uploads\20231207  10 03.mp3
+2025-02-12 22:58:06,124 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  10 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 22:58:06,842 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 22:58:06,842 - app - INFO - 轉換為單聲道
+2025-02-12 22:58:06,985 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 22:58:07,247 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  10 03.mp3.temp.wav
+2025-02-12 22:58:07,248 - app - INFO - 音頻預處理完成
+2025-02-12 22:58:07,248 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:01:54,904 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:01:54,904 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:01:54,905 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:01:54,905 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:01:54,905 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:01:54,905 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:01:55,857 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:01:55,857 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:01:57,832 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:01:57,832 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:01:57,832 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:01:57,832 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:01:57,836 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:01:57] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:01:58,143 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:01:58] "GET /api/progress/20231207%20%2010%2003 HTTP/1.1" 200 -
+2025-02-12 23:04:13,967 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:04:13] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:04:14,172 - app - INFO - 開始處理文件: 20231207  11 03.mp3
+2025-02-12 23:04:14,172 - app - INFO - 開始音頻預處理
+2025-02-12 23:04:14,172 - app - INFO - 開始預處理音頻文件: uploads\20231207  11 03.mp3
+2025-02-12 23:04:14,199 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  11 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:04:14,556 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:04:14,556 - app - INFO - 轉換為單聲道
+2025-02-12 23:04:14,626 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:04:14,748 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  11 03.mp3.temp.wav
+2025-02-12 23:04:14,749 - app - INFO - 音頻預處理完成
+2025-02-12 23:04:14,749 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:06:04,245 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:06:04,245 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:06:04,245 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:06:04,245 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:06:04,245 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:06:04,246 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:06:05,271 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:06:05,271 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:06:07,441 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:06:07,442 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:06:07,442 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:06:07,442 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:06:07,447 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:06:07] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:06:07,752 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:06:07] "GET /api/progress/20231207%20%2011%2003 HTTP/1.1" 200 -
+2025-02-12 23:08:03,227 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:08:03] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:08:03,229 - app - INFO - 開始處理文件: 20231207  12 03.mp3
+2025-02-12 23:08:03,229 - app - INFO - 開始音頻預處理
+2025-02-12 23:08:03,230 - app - INFO - 開始預處理音頻文件: uploads\20231207  12 03.mp3
+2025-02-12 23:08:03,256 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  12 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:08:04,045 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:08:04,045 - app - INFO - 轉換為單聲道
+2025-02-12 23:08:04,172 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:08:04,444 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  12 03.mp3.temp.wav
+2025-02-12 23:08:04,444 - app - INFO - 音頻預處理完成
+2025-02-12 23:08:04,444 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:11:46,124 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:11:46,126 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:11:46,126 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:11:46,126 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:11:46,126 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:11:46,126 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:11:47,226 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:11:47,226 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:11:49,220 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:11:49,242 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:11:49,242 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:11:49,242 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:11:49,248 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:11:49] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:11:49,557 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:11:49] "GET /api/progress/20231207%20%2012%2003 HTTP/1.1" 200 -
+2025-02-12 23:12:09,560 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:12:09] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:12:10,229 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:12:10] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:12:17,458 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:12:17] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:12:17,551 - app - INFO - 開始處理文件: 20231207  13 03.mp3
+2025-02-12 23:12:17,551 - app - INFO - 開始音頻預處理
+2025-02-12 23:12:17,551 - app - INFO - 開始預處理音頻文件: uploads\20231207  13 03.mp3
+2025-02-12 23:12:17,578 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  13 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:12:18,734 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:12:18,734 - app - INFO - 轉換為單聲道
+2025-02-12 23:12:18,911 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:12:19,358 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  13 03.mp3.temp.wav
+2025-02-12 23:12:19,360 - app - INFO - 音頻預處理完成
+2025-02-12 23:12:19,360 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:17:24,627 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:17:24,628 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:17:24,628 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:17:24,628 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:17:24,628 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:17:24,629 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:17:25,679 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:17:25,679 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:17:27,849 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:17:27,849 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:17:27,849 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:17:27,849 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:17:27,854 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:17:27] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:17:28,160 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:17:28] "GET /api/progress/20231207%20%2013%2003 HTTP/1.1" 200 -
+2025-02-12 23:17:42,823 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:17:42] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:17:43,134 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:17:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:17:49,828 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:17:49] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:17:49,930 - app - INFO - 開始處理文件: 20231207  14 03.mp3
+2025-02-12 23:17:49,931 - app - INFO - 開始音頻預處理
+2025-02-12 23:17:49,931 - app - INFO - 開始預處理音頻文件: uploads\20231207  14 03.mp3
+2025-02-12 23:17:49,957 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  14 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:17:50,540 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:17:50,540 - app - INFO - 轉換為單聲道
+2025-02-12 23:17:50,639 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:17:50,852 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  14 03.mp3.temp.wav
+2025-02-12 23:17:50,853 - app - INFO - 音頻預處理完成
+2025-02-12 23:17:50,853 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:20:46,174 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:20:46,175 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:20:46,175 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:20:46,175 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:20:46,175 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:20:46,175 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:20:47,089 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:20:47,089 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:20:49,235 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:20:49,235 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:20:49,235 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:20:49,235 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:20:49,241 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:20:49] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:20:49,551 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:20:49] "GET /api/progress/20231207%20%2014%2003 HTTP/1.1" 200 -
+2025-02-12 23:21:42,378 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:21:42] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:21:42,691 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:21:42] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:21:47,312 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:21:47] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:21:47,514 - app - INFO - 開始處理文件: 20231207  15 03.mp3
+2025-02-12 23:21:47,514 - app - INFO - 開始音頻預處理
+2025-02-12 23:21:47,514 - app - INFO - 開始預處理音頻文件: uploads\20231207  15 03.mp3
+2025-02-12 23:21:47,540 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  15 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:21:47,860 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:21:47,860 - app - INFO - 轉換為單聲道
+2025-02-12 23:21:47,922 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:21:48,027 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  15 03.mp3.temp.wav
+2025-02-12 23:21:48,027 - app - INFO - 音頻預處理完成
+2025-02-12 23:21:48,027 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:23:07,723 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:23:07,724 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:23:07,724 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:23:07,724 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:23:07,724 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:23:07,724 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:23:08,786 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:23:08,808 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:23:10,643 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:23:10,643 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:23:10,643 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:23:10,643 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:23:10,647 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:23:10] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:23:10,964 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:23:10] "GET /api/progress/20231207%20%2015%2003 HTTP/1.1" 200 -
+2025-02-12 23:23:32,469 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:23:32] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:23:32,786 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:23:32] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:23:39,816 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:23:39] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:23:40,007 - app - INFO - 開始處理文件: 20231207  16 03.mp3
+2025-02-12 23:23:40,007 - app - INFO - 開始音頻預處理
+2025-02-12 23:23:40,007 - app - INFO - 開始預處理音頻文件: uploads\20231207  16 03.mp3
+2025-02-12 23:23:40,032 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231207  16 03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:23:40,307 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:23:40,307 - app - INFO - 轉換為單聲道
+2025-02-12 23:23:40,353 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:23:40,446 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231207  16 03.mp3.temp.wav
+2025-02-12 23:23:40,446 - app - INFO - 音頻預處理完成
+2025-02-12 23:23:40,446 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:24:55,420 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:24:55,420 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:24:55,420 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:24:55,420 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:24:55,420 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:24:55,436 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:24:56,393 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:24:56,393 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:24:58,251 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:24:58,251 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:24:58,251 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:24:58,251 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:24:58,254 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:24:58] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:24:58,563 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:24:58] "GET /api/progress/20231207%20%2016%2003 HTTP/1.1" 200 -
+2025-02-12 23:25:57,659 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:25:57] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:25:57,960 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:25:57] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:27:22,081 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:27:22] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:27:22,084 - app - INFO - 開始處理文件: 20230817  01.mp3
+2025-02-12 23:27:22,084 - app - INFO - 開始音頻預處理
+2025-02-12 23:27:22,084 - app - INFO - 開始預處理音頻文件: uploads\20230817  01.mp3
+2025-02-12 23:27:22,117 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20230817  01.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:27:24,470 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:27:24,470 - app - INFO - 轉換為單聲道
+2025-02-12 23:27:24,762 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:27:25,497 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20230817  01.mp3.temp.wav
+2025-02-12 23:27:25,498 - app - INFO - 音頻預處理完成
+2025-02-12 23:27:25,498 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:37:34,570 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:37:34,570 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:37:34,570 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:37:34,570 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:37:34,570 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:37:34,571 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:37:35,503 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:37:35,503 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:37:37,609 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:37:37,609 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:37:37,609 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:37:37,609 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:37:37,616 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:37:37] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:37:37,921 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:37:37] "GET /api/progress/20230817%20%2001 HTTP/1.1" 200 -
+2025-02-12 23:37:54,054 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:37:54] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:37:54,361 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:37:54] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:37:59,967 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:37:59] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:37:59,970 - app - INFO - 開始處理文件: 20230817  02.mp3
+2025-02-12 23:37:59,970 - app - INFO - 開始音頻預處理
+2025-02-12 23:37:59,970 - app - INFO - 開始預處理音頻文件: uploads\20230817  02.mp3
+2025-02-12 23:37:59,997 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20230817  02.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:38:03,010 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:38:03,011 - app - INFO - 轉換為單聲道
+2025-02-12 23:38:03,336 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:38:04,177 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20230817  02.mp3.temp.wav
+2025-02-12 23:38:04,178 - app - INFO - 音頻預處理完成
+2025-02-12 23:38:04,179 - app - INFO - 開始 Whisper 轉錄
+2025-02-12 23:50:23,631 - app - INFO - Whisper 轉錄完成
+2025-02-12 23:50:23,631 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-12 23:50:23,631 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-12 23:50:23,632 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-12 23:50:23,632 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:50:23,632 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:50:24,612 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:50:24,612 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:50:26,436 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-12 23:50:26,436 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-12 23:50:26,436 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-12 23:50:26,436 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-12 23:50:26,444 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:50:26] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-12 23:50:26,756 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:50:26] "GET /api/progress/20230817%20%2002 HTTP/1.1" 200 -
+2025-02-12 23:51:51,208 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:51:51] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-12 23:51:51,349 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:51:51] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-12 23:51:56,135 - werkzeug - INFO - 127.0.0.1 - - [12/Feb/2025 23:51:56] "POST /api/upload HTTP/1.1" 200 -
+2025-02-12 23:51:56,453 - app - INFO - 開始處理文件: 20230817  03.mp3
+2025-02-12 23:51:56,455 - app - INFO - 開始音頻預處理
+2025-02-12 23:51:56,455 - app - INFO - 開始預處理音頻文件: uploads\20230817  03.mp3
+2025-02-12 23:51:56,481 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20230817  03.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-12 23:52:00,639 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-12 23:52:00,639 - app - INFO - 轉換為單聲道
+2025-02-12 23:52:01,060 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-12 23:52:02,099 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20230817  03.mp3.temp.wav
+2025-02-12 23:52:02,100 - app - INFO - 音頻預處理完成
+2025-02-12 23:52:02,101 - app - INFO - 開始 Whisper 轉錄
+2025-02-13 00:06:20,752 - app - INFO - Whisper 轉錄完成
+2025-02-13 00:06:20,753 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-13 00:06:20,753 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-13 00:06:20,753 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-13 00:06:20,753 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:06:20,753 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:06:21,684 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:06:21,684 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:06:23,788 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:06:23,788 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:06:23,788 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-13 00:06:23,788 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-13 00:06:23,797 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:06:23] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-13 00:06:24,112 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:06:24] "GET /api/progress/20230817%20%2003 HTTP/1.1" 200 -
+2025-02-13 00:07:08,956 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:07:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-13 00:07:09,257 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:07:09] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-13 00:07:19,352 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:07:19] "POST /api/upload HTTP/1.1" 200 -
+2025-02-13 00:07:19,355 - app - INFO - 開始處理文件: 20230817  04.mp3
+2025-02-13 00:07:19,355 - app - INFO - 開始音頻預處理
+2025-02-13 00:07:19,355 - app - INFO - 開始預處理音頻文件: uploads\20230817  04.mp3
+2025-02-13 00:07:19,382 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20230817  04.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-13 00:07:23,499 - app - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-13 00:07:23,500 - app - INFO - 轉換為單聲道
+2025-02-13 00:07:23,929 - app - INFO - 調整採樣率從 44100 到 16000
+2025-02-13 00:07:24,962 - app - INFO - 音頻預處理完成，臨時文件保存為: uploads\20230817  04.mp3.temp.wav
+2025-02-13 00:07:24,964 - app - INFO - 音頻預處理完成
+2025-02-13 00:07:24,964 - app - INFO - 開始 Whisper 轉錄
+2025-02-13 00:22:21,493 - app - INFO - Whisper 轉錄完成
+2025-02-13 00:22:21,494 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-13 00:22:21,494 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-13 00:22:21,494 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-13 00:22:21,494 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:22:21,495 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:22:22,476 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:22:22,476 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:22:24,456 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 00:22:24,456 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 00:22:24,456 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-13 00:22:24,456 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-13 00:22:24,465 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:22:24] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-13 00:22:24,776 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 00:22:24] "GET /api/progress/20230817%20%2004 HTTP/1.1" 200 -
+2025-02-13 16:54:44,926 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 16:54:51,974 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 16:54:51,995 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-13 16:54:51,995 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-13 16:54:51,996 - werkzeug - INFO -  * Restarting with stat
+2025-02-13 16:54:54,167 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 16:55:01,751 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 16:55:01,761 - werkzeug - WARNING -  * Debugger is active!
+2025-02-13 16:55:01,765 - werkzeug - INFO -  * Debugger PIN: 498-731-931
+2025-02-13 16:55:27,089 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 16:55:27] "GET / HTTP/1.1" 200 -
+2025-02-13 16:55:27,459 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 16:55:27] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-02-13 16:57:10,806 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 16:57:10] "POST /api/upload HTTP/1.1" 200 -
+2025-02-13 16:57:10,999 - __main__ - INFO - 開始處理文件: 20231002  01 02.mp3
+2025-02-13 16:57:11,000 - __main__ - INFO - 開始音頻預處理
+2025-02-13 16:57:11,000 - __main__ - INFO - 開始預處理音頻文件: uploads\20231002  01 02.mp3
+2025-02-13 16:57:11,115 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231002  01 02.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-13 16:57:11,666 - __main__ - INFO - 音頻文件信息: 格式=MP3, 通道數=2, 採樣率=44100
+2025-02-13 16:57:11,666 - __main__ - INFO - 轉換為單聲道
+2025-02-13 16:57:11,723 - __main__ - INFO - 調整採樣率從 44100 到 16000
+2025-02-13 16:57:11,818 - __main__ - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231002  01 02.mp3.temp.wav
+2025-02-13 16:57:11,819 - __main__ - INFO - 音頻預處理完成
+2025-02-13 16:57:11,819 - __main__ - INFO - 開始 Whisper 轉錄
+2025-02-13 16:57:11,903 - __main__ - INFO - 音頻張量形狀: (3626400,)
+2025-02-13 16:59:16,718 - __main__ - INFO - Whisper 轉錄完成
+2025-02-13 16:59:16,721 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-13 16:59:16,721 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-13 16:59:16,722 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-13 16:59:16,724 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 16:59:16,724 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 16:59:17,725 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 16:59:17,725 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 16:59:19,911 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 16:59:19,912 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 16:59:19,912 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-13 16:59:19,912 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-13 16:59:19,915 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 16:59:19] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-13 16:59:20,221 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 16:59:20] "GET /api/progress/20231002%20%2001%2002 HTTP/1.1" 200 -
+2025-02-13 17:04:05,035 - werkzeug - INFO -  * Detected change in 'E:\\CascadeProjects\\rsg_mp3_to_text\\app.py', reloading
+2025-02-13 18:52:45,413 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 18:52:50,469 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 18:52:50,512 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-13 18:52:50,513 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-13 18:52:50,516 - werkzeug - INFO -  * Restarting with stat
+2025-02-13 18:52:52,219 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 18:52:57,604 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 18:52:57,614 - werkzeug - WARNING -  * Debugger is active!
+2025-02-13 18:52:57,617 - werkzeug - INFO -  * Debugger PIN: 130-208-995
+2025-02-13 18:53:18,447 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 18:53:18] "GET / HTTP/1.1" 200 -
+2025-02-13 18:53:18,694 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 18:53:18] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-13 18:55:14,694 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 18:55:14] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-13 18:55:14,805 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 18:55:14] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-13 19:03:21,621 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 19:03:26,937 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:03:26] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-13 19:03:27,102 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:03:27] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-13 19:03:28,253 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 19:03:28,373 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.10.58:5000
+2025-02-13 19:03:28,373 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-13 19:03:28,383 - werkzeug - INFO -  * Restarting with stat
+2025-02-13 19:03:28,683 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:03:28] "[36mGET / HTTP/1.1[0m" 304 -
+2025-02-13 19:03:28,994 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:03:28] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-02-13 19:03:30,027 - __main__ - INFO - 正在載入 Whisper 模型...
+2025-02-13 19:03:35,581 - __main__ - INFO - Whisper 模型載入成功
+2025-02-13 19:03:35,594 - werkzeug - WARNING -  * Debugger is active!
+2025-02-13 19:03:35,598 - werkzeug - INFO -  * Debugger PIN: 135-978-165
+2025-02-13 19:03:36,241 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:03:36] "POST /api/upload HTTP/1.1" 200 -
+2025-02-13 19:03:36,405 - __main__ - INFO - 開始處理文件: 20231002_心靈捕夢網_03_02完剪mp3
+2025-02-13 19:03:36,406 - __main__ - INFO - 開始音頻預處理
+2025-02-13 19:03:36,406 - __main__ - INFO - 開始預處理音頻文件: uploads\20231002_心靈捕夢網_03_02完剪mp3
+2025-02-13 19:03:36,442 - pydub.converter - DEBUG - subprocess.call(['ffmpeg', '-y', '-i', 'uploads\\20231002_心靈捕夢網_03_02完剪mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+2025-02-13 19:03:36,775 - __main__ - INFO - 音頻文件信息: 格式=UPLOADS\20231002_心靈捕夢網_03_02完剪MP3, 通道數=2, 採樣率=44100
+2025-02-13 19:03:36,775 - __main__ - INFO - 轉換為單聲道
+2025-02-13 19:03:36,827 - __main__ - INFO - 調整採樣率從 44100 到 16000
+2025-02-13 19:03:36,916 - __main__ - INFO - 音頻預處理完成，臨時文件保存為: uploads\20231002_心靈捕夢網_03_02完剪mp3.temp.wav
+2025-02-13 19:03:36,916 - __main__ - INFO - 音頻預處理完成
+2025-02-13 19:03:36,917 - __main__ - INFO - 開始 Whisper 轉錄
+2025-02-13 19:03:36,996 - __main__ - INFO - 音頻張量形狀: (3453614,)
+2025-02-13 19:05:42,518 - __main__ - INFO - Whisper 轉錄完成
+2025-02-13 19:05:42,521 - google.auth._default - DEBUG - Checking None for explicit credentials as part of auth process...
+2025-02-13 19:05:42,521 - google.auth._default - DEBUG - Checking Cloud SDK credentials as part of auth process...
+2025-02-13 19:05:42,522 - google.auth._default - DEBUG - Cloud SDK credentials not found on disk; not using them
+2025-02-13 19:05:42,526 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 19:05:42,527 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 19:05:43,514 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 19:05:43,514 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 19:05:45,588 - google.auth.transport._http_client - DEBUG - Making request: GET http://169.254.169.254
+2025-02-13 19:05:45,588 - google.auth.compute_engine._metadata - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] 通訊端操作嘗試連線到一個無法連線的網路。
+2025-02-13 19:05:45,588 - google.auth._default - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-02-13 19:05:45,588 - root - ERROR - Gemini API 錯誤: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+2025-02-13 19:05:45,591 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:05:45] "POST /api/transcribe HTTP/1.1" 200 -
+2025-02-13 19:05:45,908 - werkzeug - INFO - 127.0.0.1 - - [13/Feb/2025 19:05:45] "GET /api/progress/20231002_心靈捕夢網_03_02完剪mp3 HTTP/1.1" 200 -

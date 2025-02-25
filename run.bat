@@ -1,24 +1,28 @@
 @echo off
 chcp 65001 > nul
 
-REM 設置 Python 編碼環境變量
+REM Set Python encoding environment variables
 set PYTHONIOENCODING=utf-8
 set PYTHONUTF8=1
 set PYTHONLEGACYWINDOWSFSENCODING=utf-8
 set LANG=zh_TW.UTF-8
 set LC_ALL=zh_TW.UTF-8
 
-REM 檢查虛擬環境
-if not exist ".\venv\Scripts\python.exe" (
-    echo Error: Virtual environment not found!
-    pause
-    exit /b 1
-)
+echo Starting MP3 to Text application...
+echo Please wait a few seconds...
+echo.
 
-REM 啟動虛擬環境
-call .\venv\Scripts\activate.bat
+REM Start Flask application in background
+start "" py -3.8 app.py
 
-REM 啟動應用程序
-.\venv\Scripts\python.exe app.py
+REM Wait for server to start
+timeout /t 3 /nobreak > nul
 
+REM Open browser
+echo Opening web browser...
+start http://localhost:5000
+
+echo.
+echo If browser does not open automatically, please visit: http://localhost:5000
+echo Press any key to exit...
 pause

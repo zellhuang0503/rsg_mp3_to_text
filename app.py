@@ -8,12 +8,25 @@ import logging
 import traceback
 from pathlib import Path
 from urllib.parse import unquote
+import torch
+import numpy as np
+from pydub import AudioSegment
+import json
+from flask import Flask, request, jsonify, send_from_directory, Response
+from flask_cors import CORS
+from werkzeug.utils import secure_filename
+import whisper
+import google.generativeai as genai
 
 # 設置日誌記錄
-logging.basicConfig(level=logging.DEBUG,
-                   format='%(asctime)s [%(levelname)s] %(message)s',
-                   handlers=[logging.FileHandler('app.log', encoding='utf-8'),
-                           logging.StreamHandler()])
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('app.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # 設置環境變量
@@ -26,47 +39,13 @@ os.environ['LC_ALL'] = 'zh_TW.UTF-8'
 UPLOAD_FOLDER = 'uploads'
 TRANSCRIPTS_FOLDER = 'transcripts'
 ALLOWED_EXTENSIONS = {'mp3', 'wav', 'm4a', 'ogg', 'flac'}
-MAX_CONTENT_LENGTH = 45 * 1024 * 1024  # 45MB
+MAX_CONTENT_LENGTH = 40 * 1024 * 1024  # 40MB
 
-import json
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from werkzeug.utils import secure_filename
-import whisper
-from pydub import AudioSegment
+app = Flask(__name__, 
+    static_folder='frontend/static',  # 設定靜態檔案資料夾
+    static_url_path='/static'         # 設定靜態檔案 URL 路徑
+)
 
-# 強制使用 UTF-8 編碼
-# os.environ['PYTHONIOENCODING'] = 'utf-8'
-# os.environ['PYTHONUTF8'] = '1'
-# os.environ['PYTHONLEGACYWINDOWSFSENCODING'] = 'utf-8'
-# os.environ['LANG'] = 'zh_TW.UTF-8'
-# os.environ['LC_ALL'] = 'zh_TW.UTF-8'
-
-# 設置日誌
-# logging.basicConfig(
-#     level=logging.DEBUG,
-#     format='%(asctime)s [%(levelname)s] %(message)s',
-#     handlers=[
-#         logging.StreamHandler(),
-#         logging.FileHandler('app.log', encoding='utf-8')
-#     ]
-# )
-# logger = logging.getLogger(__name__)
-
-# 打印系統環境信息
-logger.info("=== 系統環境信息 ===")
-logger.info(f"Python 版本: {sys.version}")
-logger.info(f"系統平台: {sys.platform}")
-logger.info(f"文件系統編碼: {sys.getfilesystemencoding()}")
-logger.info(f"默認編碼: {sys.getdefaultencoding()}")
-logger.info(f"環境變量:")
-logger.info(f"- PYTHONIOENCODING: {os.environ.get('PYTHONIOENCODING')}")
-logger.info(f"- PYTHONUTF8: {os.environ.get('PYTHONUTF8')}")
-logger.info(f"- LANG: {os.environ.get('LANG')}")
-logger.info(f"- LC_ALL: {os.environ.get('LC_ALL')}")
-
-app = Flask(__name__)
-# 配置 CORS
 CORS(app, resources={
     r"/api/*": {
         "origins": ["http://localhost:5500"],
@@ -77,359 +56,280 @@ CORS(app, resources={
     }
 })
 
-# 初始化 whisper 模型
+# 初始化 Gemini API
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+
+# 載入 Whisper 模型（使用較大的模型以提高準確度）
 try:
-    model = whisper.load_model("base")
-    print("Whisper 模型載入成功")
+    logger.info("正在載入 Whisper 模型...")
+    model = whisper.load_model("medium")
+    logger.info("Whisper 模型載入成功")
 except Exception as e:
-    print(f"Whisper 模型載入失敗: {str(e)}")
-    model = None
+    logger.error(f"載入 Whisper 模型失敗: {str(e)}")
+    logger.error(traceback.format_exc())
+    raise
 
-print(f"應用程序啟動")
-print(f"當前工作目錄: {os.getcwd()}")
-print(f"上傳目錄設置為: {UPLOAD_FOLDER}")
-print(f"Python 版本: {sys.version}")
-print(f"已安裝的套件:")
-for name, module in list(sys.modules.items()):
-    try:
-        if hasattr(module, '__version__'):
-            print(f"- {name}: {module.__version__}")
-    except:
-        continue
-
-# 確保上傳目錄存在
-Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
-
-def debug_string(s, prefix=""):
-    """調試字符串的編碼和內容"""
-    try:
-        info = {
-            'value': s,
-            'type': type(s).__name__,
-            'length': len(s),
-            'bytes_repr': repr(s.encode('utf-8')),
-            'is_ascii': all(ord(c) < 128 for c in s),
-            'contains_chinese': bool(re.search(r'[\u4e00-\u9fff]', s)),
-            'url_encoded': quote(s),
-            'url_decoded': unquote(s)
-        }
-        
-        logger.debug(f"{prefix} 字符串分析:")
-        for key, value in info.items():
-            logger.debug(f"{prefix} - {key}: {value}")
-        
-        return info
-    except Exception as e:
-        logger.error(f"{prefix} 分析字符串時出錯: {str(e)}")
-        return None
-
-def safe_filename(filename, original_filename=None):
-    """強化版文件名安全處理"""
-    try:
-        # 優先使用原始文件名
-        if original_filename:
-            filename = original_filename
-            
-        # 多層次清理
-        filename = str(filename).strip()
-        filename = os.path.basename(filename)  # 去除路徑
-        filename = re.sub(r'[\\/*?:"<>|]', '_', filename)  # 替換特殊符號
-        filename = filename.replace('\n', '_').replace('\r', '_')  # 處理控制字符
-        filename = filename.strip('. ')  # 避免隱藏文件
-        filename = filename[:200]  # 限制長度
-        
-        # 確保副檔名有效
-        name, ext = os.path.splitext(filename)
-        ext = ext.split('?')[0]  # 去除URL參數
-        ext = ext[:10]  # 限制副檔名長度
-        filename = f"{name}{ext}"
-        
-        # 最終後備機制
-        if not filename:
-            filename = f"unnamed_{int(time.time())}"
-            
-        return filename
-    except Exception as e:
-        logger.error(f"文件名處理失敗: {str(e)}")
-        return f"error_{int(time.time())}"
+# 儲存轉錄進度的字典
+transcription_progress = {}
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def format_timestamp(seconds):
-    """將秒數轉換為時間戳格式"""
-    minutes = int(seconds // 60)
-    seconds = int(seconds % 60)
-    return f"{minutes:02d}:{seconds:02d}"
+def normalize_filename(filename):
+    """保留原始中文檔名和底線"""
+    # 解碼 URL 編碼的檔名
+    decoded_filename = unquote(filename)
+    # 移除非法字符但保留中文、底線和空格
+    safe_filename = re.sub(r'[^\w\u4e00-\u9fff_ \-]', '', decoded_filename)
+    # 替換連續空格為單一底線
+    safe_filename = re.sub(r'\s+', '_', safe_filename.strip())
+    return safe_filename
 
-def detect_speakers(segments):
-    """根據時間間隔檢測不同的說話者"""
-    current_speaker = 1
-    last_end_time = 0
-    formatted_segments = []
-    
-    for segment in segments:
-        # 檢查是否需要切換說話者
-        if last_end_time > 0 and (segment['start'] - last_end_time) > 2.0:
-            current_speaker += 1
-        
-        # 處理文字
-        text = segment['text']
-        formatted_text = (
-            f"[說話者 {current_speaker}] "
-            f"({format_timestamp(segment['start'])} - {format_timestamp(segment['end'])}) "
-            f"{text}"
-        )
-        
-        formatted_segments.append(formatted_text)
-        last_end_time = segment['end']
-    
-    return formatted_segments
-
-def save_transcript_to_markdown(transcript_data, original_filename):
-    """將轉錄結果保存為 Markdown 文件 (強化版)"""
+def preprocess_audio(file_path):
+    """預處理音頻文件"""
     try:
-        logger.info("=== 開始保存 Markdown 文件 ===")
+        logger.info(f"開始預處理音頻文件: {file_path}")
         
-        # 確保原始文件名有效性
-        if not original_filename or not isinstance(original_filename, str):
-            logger.warning("原始文件名無效，使用預設文件名")
-            original_filename = "unnamed_audio_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        # 讀取音頻文件
+        audio = AudioSegment.from_file(file_path)
+        logger.info(f"音頻文件信息: 格式={file_path.split('.')[-1].upper()}, 通道數={audio.channels}, 採樣率={audio.frame_rate}")
         
-        # 生成安全文件名
-        cleaned_name = safe_filename(original_filename)
-        base_name = os.path.splitext(cleaned_name)[0]
-        md_filename = f"{base_name}.md"
-        md_path = Path(TRANSCRIPTS_FOLDER) / md_filename
+        # 獲取音頻基礎信息
+        sample_rate = audio.frame_rate  # 正確屬性
+        channels = audio.channels       # 正確屬性
         
-        logger.info(f"最終文件路徑: {md_path}")
-        logger.debug(f"路徑組成檢查: {TRANSCRIPTS_FOLDER} + {md_filename}")
-
-        # 驗證並創建目錄
-        try:
-            Path(TRANSCRIPTS_FOLDER).mkdir(parents=True, exist_ok=True)
-            logger.info("目錄驗證成功")
-            
-            # 測試目錄可寫性
-            test_file = Path(TRANSCRIPTS_FOLDER) / "write_test.tmp"
-            test_file.touch()
-            test_file.unlink()
-        except Exception as e:
-            logger.critical(f"目錄權限異常: {str(e)}")
-            raise PermissionError(f"無法寫入目錄: {TRANSCRIPTS_FOLDER}")
-
-        # 生成文件內容
-        md_content = f"# 音頻轉錄結果：{cleaned_name}\n\n"
-        md_content += f"轉錄時間：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-        md_content += "## 內容\n\n"
+        # 轉換為單聲道
+        if audio.channels > 1:
+            logger.info("轉換為單聲道")
+            audio = audio.set_channels(1)
         
-        # 處理轉錄內容
-        segments = transcript_data['segments']
-        if isinstance(segments, list):
-            if segments and isinstance(segments[0], str):
-                # 已經處理過的文本列表
-                for segment in segments:
-                    md_content += f"{segment}\n\n"
-            else:
-                # 原始的轉錄片段
-                for segment in segments:
-                    text = segment['text'].strip()
-                    text = text.replace('\n', ' ')  # 移除內部換行
-                    text = re.sub(r'\s+', ' ', text)  # 合併多餘空格
-                    
-                    time_range = (
-                        f"{format_timestamp(segment['start'])}"
-                        f" - {format_timestamp(segment['end'])}"
-                    )
-                    md_content += f"### {time_range}\n{text}\n\n"
-
-        # 二階段寫入機制
-        try:
-            # 先寫入臨時文件
-            temp_path = md_path.with_suffix('.tmp')
-            with open(temp_path, 'w', encoding='utf-8', errors='replace') as f:
-                f.write(md_content)
-            
-            # 原子操作替換文件
-            if md_path.exists():
-                md_path.unlink()
-            temp_path.rename(md_path)
-            
-            # 驗證文件完整性
-            if md_path.exists():
-                try:
-                    with open(md_path, 'r', encoding='utf-8') as f:
-                        f.read(1024)
-                    logger.info("文件完整性驗證通過")
-                except Exception as e:
-                    logger.error("文件驗證失敗，可能已損壞")
-                    md_path.unlink(missing_ok=True)
-                    return None
-                    
-            logger.info(f"文件保存成功，大小: {md_path.stat().st_size} bytes")
-            return md_filename
-            
-        except OSError as e:
-            logger.error(f"文件系統錯誤: {str(e)}")
-            if e.errno == 28:
-                raise Exception("磁碟空間不足")
-            raise
-        except UnicodeEncodeError as e:
-            logger.error("編碼異常，使用錯誤替代處理")
-            with open(md_path, 'w', encoding='utf-8', errors='replace') as f:
-                f.write(md_content)
-            return md_filename
-            
+        # 設置採樣率為 16kHz（Whisper 模型的標準要求）
+        if audio.frame_rate != 16000:
+            logger.info(f"調整採樣率從 {audio.frame_rate} 到 16000")
+            audio = audio.set_frame_rate(16000)
+        
+        # 導出為臨時 WAV 文件
+        temp_path = file_path + '.temp.wav'
+        audio.export(temp_path, format='wav')
+        logger.info(f"音頻預處理完成，臨時文件保存為: {temp_path}")
+        
+        return temp_path
     except Exception as e:
-        logger.error(f"保存過程嚴重異常: {str(e)}")
-        logger.error(f"異常類型: {type(e)}")
-        logger.error(f"堆棧追蹤: {traceback.format_exc()}")
-        return None
+        logger.error(f"音頻預處理失敗: {str(e)}")
+        logger.error(traceback.format_exc())
+        raise
+
+@app.route('/')
+def index():
+    return send_from_directory('frontend', 'index.html')
+
+@app.route('/static/js/<path:filename>')
+
+def serve_static(filename):
+    return send_from_directory('frontend/static/js', filename)
 
 @app.route('/api/upload', methods=['POST'])
-def upload_file():
+def api_upload():
+    if 'file' not in request.files:
+        return jsonify({'error': '未找到檔案'}), 400
+        
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': '未選擇檔案'}), 400
+        
+    if not allowed_file(file.filename):
+        return jsonify({'error': '不支援的檔案格式'}), 400
+        
     try:
-        logger.info("=== 開始處理文件上傳請求 ===")
-        logger.info(f"請求頭: {dict(request.headers)}")
+        # 獲取並保留原始檔名（包含中文）
+        original_filename = normalize_filename(file.filename)
         
-        if 'file' not in request.files:
-            logger.error("錯誤：請求中沒有文件")
-            return jsonify({'error': '沒有檔案'}), 400
+        # 確保上傳目錄存在
+        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
         
-        file = request.files['file']
-        original_filename = request.form.get('originalFilename')
+        # 保存檔案
+        file_path = os.path.join(UPLOAD_FOLDER, original_filename)
+        file.save(file_path)
         
-        logger.info("=== 文件信息 ===")
-        logger.info(f"Content-Type: {request.content_type}")
-        logger.info(f"表單數據: {dict(request.form)}")
-        logger.info(f"文件對象: {file}")
-        logger.info(f"文件名: {file.filename}")
-        debug_string(file.filename, "上傳的文件名")
-        
-        if original_filename:
-            debug_string(original_filename, "原始文件名")
-        
-        if file.filename == '':
-            logger.error("錯誤：沒有選擇文件")
-            return jsonify({'error': '沒有選擇檔案'}), 400
-        
-        if file and allowed_file(file.filename):
-            # 記錄文件名信息
-            logger.info(f"文件名信息：")
-            logger.info(f"- 上傳的檔名：{file.filename}")
-            logger.info(f"- 原始檔名：{original_filename}")
-            
-            try:
-                # 處理文件名
-                filename = safe_filename(file.filename, original_filename)
-                filepath = Path(UPLOAD_FOLDER) / filename
-                
-                logger.info(f"處理後檔名：{filename}")
-                logger.info(f"完整路徑：{filepath}")
-                
-                # 確保上傳目錄存在
-                Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
-                
-                # 如果文件已存在，先刪除
-                if filepath.exists():
-                    logger.info(f"刪除已存在的文件: {filepath}")
-                    filepath.unlink()
-                
-                # 保存文件
-                try:
-                    # 對於音頻文件，使用二進制模式
-                    file_content = file.read()
-                    with open(str(filepath), 'wb') as f:
-                        f.write(file_content)
-                    logger.info(f"文件保存成功: {filepath}")
-                    
-                    # 驗證文件是否成功保存
-                    if filepath.exists():
-                        file_size = filepath.stat().st_size
-                        logger.info(f"文件大小：{file_size} bytes")
-                        
-                        # 嘗試讀取文件開頭，確保可以訪問
-                        with open(str(filepath), 'rb') as f:
-                            f.read(1024)
-                        logger.info("文件可以正常讀取")
-                    else:
-                        raise Exception("文件未能成功保存")
-                    
-                except Exception as save_error:
-                    logger.error(f"保存文件時發生錯誤: {str(save_error)}")
-                    raise save_error
-                
-                return jsonify({
-                    'message': '檔案上傳成功',
-                    'filename': filename,
-                    'originalFilename': original_filename
-                }), 200
-            except Exception as process_error:
-                logger.error(f"處理文件時發生錯誤: {str(process_error)}")
-                raise process_error
-        else:
-            logger.error(f"不支援的檔案格式: {file.filename}")
-            return jsonify({'error': '不支援的檔案格式'}), 400
-            
+        return jsonify({
+            'message': '檔案上傳成功',
+            'filename': original_filename
+        })
     except Exception as e:
-        logger.error(f"上傳錯誤: {str(e)}")
-        logger.error(f"錯誤類型: {type(e)}")
-        traceback.print_exc()
-        return jsonify({'error': f'上傳失敗: {str(e)}'}), 500
+        logger.error(f"檔案上傳失敗: {str(e)}")
+        return jsonify({'error': '檔案上傳失敗'}), 500
+
+@app.route('/api/progress/<task_id>')
+def get_progress(task_id):
+    def generate():
+        while True:
+            if task_id in transcription_progress:
+                progress_data = transcription_progress[task_id]
+                yield f"data: {json.dumps(progress_data)}\n\n"
+                
+                if progress_data['status'] in ['completed', 'error']:
+                    break
+            time.sleep(0.5)  # 每0.5秒檢查一次進度
+            
+    return Response(generate(), mimetype='text/event-stream')
 
 @app.route('/api/transcribe', methods=['POST'])
-def transcribe_audio():
+def api_transcribe():
     try:
         data = request.get_json()
         if not data or 'filename' not in data:
-            return jsonify({'error': '未提供檔名'}), 400
-            
+            return jsonify({'error': 'No filename provided'}), 400
+        
         filename = data['filename']
-        original_filename = data.get('originalFilename', filename)
-        
-        # URL 解碼文件名
-        original_filename = unquote(original_filename)
-        filename = unquote(filename)
-        
         file_path = os.path.join(UPLOAD_FOLDER, filename)
+        task_id = os.path.splitext(filename)[0]
+        
         if not os.path.exists(file_path):
-            logger.error(f"找不到檔案: {file_path}")
-            return jsonify({'error': '找不到檔案'}), 404
-            
-        if not model:
-            logger.error("Whisper 模型未正確載入")
-            return jsonify({'error': 'Whisper 模型未正確載入'}), 500
-            
-        logger.info(f"開始轉錄音頻文件:")
-        logger.info(f"- 檔案路徑: {file_path}")
-        logger.info(f"- 原始檔名: {original_filename}")
+            logger.error(f"找不到文件: {file_path}")
+            return jsonify({'error': 'File not found'}), 404
         
-        # 使用 whisper 進行轉錄
-        result = model.transcribe(file_path, language='zh')
-        
-        # 檢測說話者並更新結果
-        result['segments'] = detect_speakers(result['segments'])
-        
-        # 保存為 Markdown 文件
-        md_filename = save_transcript_to_markdown(result, original_filename)
-        if not md_filename:
-            logger.error("保存 Markdown 文件失敗")
-            return jsonify({'error': '保存轉錄結果失敗'}), 500
-        
-        # 在回應中加入 Markdown 文件名
-        response_data = {
-            'text': result['text'],
-            'segments': result['segments'],
-            'markdown_file': md_filename
+        logger.info(f"開始處理文件: {filename}")
+        transcription_progress[task_id] = {
+            'status': 'processing',
+            'progress': 0,
+            'message': '正在初始化...'
         }
         
-        logger.info("轉錄完成，返回結果")
-        return jsonify(response_data)
-        
+        # 預處理音頻
+        try:
+            logger.info("開始音頻預處理")
+            transcription_progress[task_id].update({
+                'progress': 20,
+                'message': '正在處理音頻文件...'
+            })
+            
+            processed_file = preprocess_audio(file_path)
+            logger.info("音頻預處理完成")
+            
+            # 執行轉錄
+            transcription_progress[task_id].update({
+                'progress': 40,
+                'message': '正在進行語音識別...'
+            })
+            
+            # 使用 Whisper 進行轉錄
+            logger.info("開始 Whisper 轉錄")
+            audio_tensor = whisper.load_audio(processed_file)
+            logger.info(f"音頻張量形狀: {audio_tensor.shape}")
+            result = model.transcribe(audio_tensor, language="zh")
+            logger.info("Whisper 轉錄完成")
+            
+            text = result.get('text', '')
+            
+            # 使用 Gemini 改善文字品質
+            transcription_progress[task_id].update({
+                'progress': 80,
+                'message': '正在改善文字品質...'
+            })
+            
+            improved_text = improve_text_quality(text)
+            
+            # 保存結果
+            transcription_progress[task_id].update({
+                'progress': 90,
+                'message': '正在保存結果...'
+            })
+            
+            # 生成输出文件名
+            safe_filename = normalize_filename(filename)
+            base_name = os.path.splitext(safe_filename)[0]
+            output_filename = f"{base_name}.md"
+            output_path = os.path.join(TRANSCRIPTS_FOLDER, output_filename)
+
+            # 處理重複文件名
+            counter = 1
+            while os.path.exists(output_path):
+                output_filename = f"{base_name}_{counter}.md"
+                output_path = os.path.join(TRANSCRIPTS_FOLDER, output_filename)
+                counter += 1
+            
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(improved_text)
+            
+            # 清理臨時文件
+            if os.path.exists(processed_file):
+                os.remove(processed_file)
+            
+            transcription_progress[task_id].update({
+                'status': 'completed',
+                'progress': 100,
+                'message': '轉錄完成！',
+                'text': improved_text
+            })
+            
+            return jsonify({'task_id': task_id})
+            
+        except Exception as e:
+            logger.error(f"轉錄過程中發生錯誤: {str(e)}")
+            logger.error(traceback.format_exc())
+            transcription_progress[task_id].update({
+                'status': 'error',
+                'progress': 0,
+                'message': f'發生錯誤：{str(e)}'
+            })
+            return jsonify({'error': str(e)}), 500
+            
     except Exception as e:
-        logger.error(f"轉錄錯誤: {str(e)}")
+        logger.error(f"API 處理過程中發生錯誤: {str(e)}")
         logger.error(traceback.format_exc())
-        return jsonify({'error': f'轉錄過程中發生錯誤: {str(e)}'}), 500
+        return jsonify({'error': str(e)}), 500
+
+def improve_text_quality(text):
+    """使用 Gemini 改善文字品質"""
+    try:
+        # 配置模型
+        model = genai.GenerativeModel('gemini-pro')
+        # 設置提示詞
+        prompt = f"""
+        作為一個文字校對專家，請幫我修正以下繁體中文文本。你需要：
+
+        1. 基本要求：
+           - 修正所有錯別字
+           - 改善文字的通順度
+           - 保持原意不變
+           - 維持繁體中文輸出
+
+        2. 專有名詞規範：
+           - "關係花園" (不是其他變體)
+           - "關係聊天室" (不是其他變體)
+           - "心靈捕夢網" (不是其他變體)
+           - "關係聊天室Podcast" (不是其他變體)
+           - "牢籠" (不要誤寫為"籠子"或其他變體)
+           - "經驗" (不要誤寫為"經歷"或其他變體)
+
+        3. 格式要求：
+           - 根據語意適當添加標點符號（逗號、句號、分號等）
+           - 按照內容邏輯分段，每段表達一個完整的思想
+           - 使用適當的段落間距來提高可讀性
+           - 重要觀點可以使用破折號來強調
+           - 對話或引述內容使用引號標示
+
+        以下是需要修正的文字：
+        {text}
+
+        請注意：
+        1. 保持原文的語氣和風格
+        2. 分段時要考慮上下文的連貫性
+        3. 標點符號的使用要自然，不要過度
+        4. 確保所有專有名詞的正確性
+        5. 段落長度要適中，避免過長或過短
+        """
+        
+        # 生成回應
+        response = model.generate_content(prompt)
+        
+        # 檢查是否有回應
+        if response.text:
+            return response.text.strip()
+        return text  # 如果 API 調用失敗，返回原始文字
+    except Exception as e:
+        logging.error(f"Gemini API 錯誤: {str(e)}")
+        return text  # 如果 API 調用失敗，返回原始文字
 
 if __name__ == '__main__':
     # 確保上傳目錄存在
