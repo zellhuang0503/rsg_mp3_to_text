@@ -222,6 +222,10 @@ def api_transcribe():
             
             text = result.get('text', '')
             
+            # 確保文本為繁體中文
+            converter = opencc.OpenCC('s2t')  # 簡體轉繁體
+            text = converter.convert(text)
+            
             # 使用 Gemini 改善文字品質
             transcription_progress[task_id].update({
                 'progress': 80,
@@ -235,6 +239,10 @@ def api_transcribe():
                 'progress': 90,
                 'message': '正在保存結果...'
             })
+            
+            # 最終確保輸出為繁體中文
+            converter = opencc.OpenCC('s2t')  # 簡體轉繁體
+            improved_text = converter.convert(improved_text)
             
             # 生成输出文件名
             safe_filename = normalize_filename(filename)
@@ -282,9 +290,24 @@ def api_transcribe():
 
 # 定義專有名詞對照表
 PROPER_NOUNS = {
+    "觀西花園": "關係花園",
+    "關西花園": "關係花園",
+    "慧青": "慧卿",
     "關西聊天室": "關係聊天室",
-    "心靈補夢網": "心靈捕夢網"
+    "心靈補夢網": "心靈捕夢網",
+    "從關西切入": "從關係切入"
 }
+
+# 定義上下文相關詞彙替換（基於上下文的複雜替換）
+CONTEXT_SPECIFIC_TERMS = [
+    {
+        "pattern": "關照",  # 比對模式
+        "replacement": "觀照",  # 替換詞
+        "context_before": ["心靈", "靈性", "自己", "內在", "意識"],  # 前文關鍵詞
+        "context_distance": 20,  # 關鍵詞與目標詞的最大距離（字元數）
+        "exceptions": ["關照家人", "關照朋友", "關照他人"]  # 例外情況，這些短語不替換
+    }
+]
 
 def improve_text_quality(text, max_retries=3, chunk_size=1500):
     """使用 Gemini 改善文字品質
@@ -360,6 +383,9 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
                        - 維持繁體中文輸出
                        
                     2. 特別注意：
+                       - "觀西花園" 應該是 "關係花園"
+                       - "關西花園" 應該是 "關係花園"
+                       - "慧青" 應該是 "慧卿"
                        - "關西聊天室" 應該是 "關係聊天室"
                        - "心靈補夢網" 應該是 "心靈捕夢網"
                        - 這些是特定名詞，請務必正確使用
@@ -393,6 +419,37 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
                         for wrong, correct in PROPER_NOUNS.items():
                             response_text = response_text.replace(wrong, correct)
                         
+                        # 處理上下文相關詞彙替換
+                        for term in CONTEXT_SPECIFIC_TERMS:
+                            pattern = term['pattern']
+                            replacement = term['replacement']
+                            context_before = term['context_before']
+                            context_distance = term['context_distance']
+                            exceptions = term['exceptions']
+                            
+                            # 搜尋模式
+                            for match in re.finditer(pattern, response_text):
+                                start = match.start()
+                                end = match.end()
+                                
+                                # 檢查前文關鍵詞
+                                has_context = False
+                                for keyword in context_before:
+                                    if keyword in response_text[max(0, start - context_distance):start]:
+                                        has_context = True
+                                        break
+                                
+                                # 檢查例外情況
+                                is_exception = False
+                                for exception in exceptions:
+                                    if exception in response_text[max(0, start - context_distance):end + context_distance]:
+                                        is_exception = True
+                                        break
+                                
+                                # 執行替換
+                                if has_context and not is_exception:
+                                    response_text = response_text[:start] + replacement + response_text[end:]
+                        
                         improved_chunks.append(response_text)
                         break  # 成功處理，跳出重試循環
                     else:
@@ -408,9 +465,47 @@ def improve_text_quality(text, max_retries=3, chunk_size=1500):
         # 合併所有改善後的文本塊
         improved_text = ''.join(improved_chunks)
         
-        # 最後的清理
+        # 最後的清理和確保繁體輸出
         improved_text = re.sub(r'\n{3,}', '\n\n', improved_text)  # 移除過多的空行
         improved_text = improved_text.strip()
+        
+        # 最終確保輸出為繁體中文
+        improved_text = converter.convert(improved_text)
+        
+        # 檢查並修正特定名詞
+        for wrong, correct in PROPER_NOUNS.items():
+            improved_text = improved_text.replace(wrong, correct)
+        
+        # 處理上下文相關詞彙替換
+        for term in CONTEXT_SPECIFIC_TERMS:
+            pattern = term['pattern']
+            replacement = term['replacement']
+            context_before = term['context_before']
+            context_distance = term['context_distance']
+            exceptions = term['exceptions']
+            
+            # 搜尋模式
+            for match in re.finditer(pattern, improved_text):
+                start = match.start()
+                end = match.end()
+                
+                # 檢查前文關鍵詞
+                has_context = False
+                for keyword in context_before:
+                    if keyword in improved_text[max(0, start - context_distance):start]:
+                        has_context = True
+                        break
+                
+                # 檢查例外情況
+                is_exception = False
+                for exception in exceptions:
+                    if exception in improved_text[max(0, start - context_distance):end + context_distance]:
+                        is_exception = True
+                        break
+                
+                # 執行替換
+                if has_context and not is_exception:
+                    improved_text = improved_text[:start] + replacement + improved_text[end:]
         
         logger.info("文字品質改善完成")
         return improved_text
